@@ -1,0 +1,2082 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Deeplink Creators — Service Pricing 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #060501;
+    --bg2: #191218;
+    --bg3: #211b2f;
+    --card: #1f192e;
+    --border: rgba(210, 166, 87, 0.25);
+    --border2: rgba(210, 166, 87, 0.45);
+    --accent: #d3a657;
+    --accent2: #f2c96e;
+    --accent3: #6db6f3;
+    --accent4: #f6a44b;
+    --text: #f6efd9;
+    --text2: #cdbf9f;
+    --text3: #a5967a;
+    --green: #2cc67f;
+    --orange: #fbb23f;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Inter', 'Poppins', sans-serif;
+    font-size: 14px;
+    line-height: 1.6;
+    min-height: 100vh;
+  }
+  /* ---- HEADER ---- */
+  .header {
+    background: linear-gradient(135deg, #0b050f 0%, #271c30 45%, #0b050f 100%);
+    border-bottom: 1px solid var(--border2);
+    padding: 60px 40px 50px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .header::before {
+    content: '';
+    position: absolute;
+    top: -120px; left: 50%; transform: translateX(-50%);
+    width: 700px; height: 350px;
+    background: radial-gradient(ellipse, rgba(211,166,87,0.24) 0%, transparent 75%);
+    pointer-events: none;
+  }
+  .header::after {
+    content: '';
+    position: absolute;
+    bottom: -80px; right: -80px;
+    width: 350px; height: 350px;
+    background: radial-gradient(ellipse, rgba(242,201,110,0.14) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .logo-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(211,166,87,0.15);
+    border: 1px solid rgba(211,166,87,0.45);
+    border-radius: 100px;
+    padding: 8px 20px;
+    margin-bottom: 28px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--accent);
+  }
+  .logo-dot { width: 8px; height: 8px; background: var(--accent); border-radius: 50%; animation: pulse 2s infinite; }
+  @keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:0.5;transform:scale(0.8)} }
+  .header h1 {
+    font-family: 'Poppins', sans-serif;
+    font-size: clamp(32px, 5vw, 58px);
+    font-weight: 800;
+    line-height: 1.05;
+    letter-spacing: -1.5px;
+    margin-bottom: 16px;
+  }
+  .header h1 span { background: linear-gradient(135deg, var(--accent), var(--accent2)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+  .header p { color: var(--text2); font-size: 15px; max-width: 520px; margin: 0 auto 30px; }
+  .header-meta {
+    display: flex; gap: 24px; justify-content: center; flex-wrap: wrap;
+  }
+  .meta-chip {
+    display: flex; align-items: center; gap: 8px;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid var(--border);
+    border-radius: 8px; padding: 8px 16px;
+    font-size: 12px; color: var(--text2);
+  }
+  .meta-chip strong { color: var(--text); font-weight: 600; }
+  /* ---- NAV TABS ---- */
+  .nav-wrapper {
+    position: sticky; top: 0; z-index: 100;
+    background: rgba(6,6,14,0.97);
+    border-bottom: 1px solid var(--border);
+    backdrop-filter: blur(16px);
+    padding: 0 40px;
+    overflow-x: auto;
+  }
+  .nav-tabs {
+    display: flex; gap: 0; max-width: 1400px; margin: 0 auto;
+    min-width: max-content;
+  }
+  .nav-tab {
+    padding: 16px 22px;
+    font-size: 12px; font-weight: 600; letter-spacing: 0.5px;
+    color: var(--text3); cursor: pointer; white-space: nowrap;
+    border-bottom: 2px solid transparent;
+    transition: all 0.25s;
+  }
+  .nav-tab:hover { color: var(--text2); }
+  .nav-tab.active { color: var(--accent2); border-bottom-color: var(--accent2); }
+  /* ---- CONTENT ---- */
+  .content { max-width: 1400px; margin: 0 auto; padding: 40px; }
+  .section { display: none; }
+  .section.active { display: block; }
+  /* ---- SECTION HEADER ---- */
+  .sec-head {
+    display: flex; align-items: flex-start; gap: 20px;
+    margin-bottom: 36px; padding-bottom: 24px;
+    border-bottom: 1px solid var(--border);
+  }
+  .sec-icon {
+    width: 50px; height: 50px; border-radius: 14px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 22px; flex-shrink: 0;
+  }
+  .sec-head-text h2 {
+    font-family: 'Poppins', sans-serif; font-size: 24px;
+    font-weight: 700; margin-bottom: 6px;
+  }
+  .sec-head-text p { color: var(--text2); font-size: 13px; max-width: 600px; }
+  /* ---- SERVICE CARD ---- */
+  .service-grid { display: flex; flex-direction: column; gap: 20px; }
+  .service-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    overflow: hidden;
+    transition: border-color 0.25s;
+  }
+  .service-card:hover { border-color: var(--border2); }
+  .service-card-header {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 20px 24px; cursor: pointer; gap: 16px;
+  }
+  .service-card-header-left { display: flex; align-items: center; gap: 14px; }
+  .svc-icon {
+    width: 40px; height: 40px; border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 18px; flex-shrink: 0;
+  }
+  .svc-title { font-family: 'Poppins', sans-serif; font-size: 15px; font-weight: 700; margin-bottom: 2px; }
+  .svc-sub { font-size: 12px; color: var(--text2); }
+  .svc-price-range {
+    text-align: right; flex-shrink: 0;
+  }
+  .price-main { font-family: 'Poppins', sans-serif; font-size: 16px; font-weight: 700; color: var(--accent2); }
+  .price-period { font-size: 11px; color: var(--text3); }
+  .toggle-icon { font-size: 12px; color: var(--text3); transition: transform 0.3s; }
+  .service-card.open .toggle-icon { transform: rotate(180deg); }
+  .service-card-body {
+    max-height: 0; overflow: hidden; transition: max-height 0.4s ease;
+    border-top: 0px solid var(--border);
+  }
+  .service-card.open .service-card-body {
+    max-height: 2000px;
+    border-top: 1px solid var(--border);
+  }
+  .service-card-body-inner { padding: 24px; }
+  /* ---- PLAN COLS ---- */
+  .plan-cols { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-bottom: 20px; }
+  .plan-col {
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    border-radius: 12px; padding: 18px;
+  }
+  .plan-col.highlight { border-color: var(--accent); background: rgba(90,100,255,0.08); }
+  .plan-label {
+    font-size: 10px; font-weight: 700; letter-spacing: 2px;
+    text-transform: uppercase; margin-bottom: 10px;
+    color: var(--text3);
+  }
+  .plan-col.highlight .plan-label { color: var(--accent); }
+  .plan-price {
+    font-family: 'Poppins', sans-serif; font-size: 22px; font-weight: 800;
+    color: var(--text); margin-bottom: 2px;
+  }
+  .plan-price-note { font-size: 11px; color: var(--text3); margin-bottom: 14px; }
+  .plan-features { list-style: none; display: flex; flex-direction: column; gap: 7px; }
+  .plan-features li { font-size: 12px; color: var(--text2); display: flex; gap: 7px; align-items: flex-start; }
+  .plan-features li::before { content: '✓'; color: var(--green); font-size: 11px; margin-top: 1px; flex-shrink: 0; }
+  /* ---- LINE ITEMS TABLE ---- */
+  .line-table { width: 100%; border-collapse: collapse; }
+  .line-table th {
+    text-align: left; padding: 10px 14px;
+    background: var(--bg3); font-size: 11px; font-weight: 600;
+    letter-spacing: 1px; text-transform: uppercase; color: var(--text3);
+    border-bottom: 1px solid var(--border);
+  }
+  .line-table td {
+    padding: 12px 14px; border-bottom: 1px solid rgba(90,100,255,0.07);
+    font-size: 13px; color: var(--text2); vertical-align: top;
+  }
+  .line-table tr:last-child td { border-bottom: none; }
+  .line-table tr:hover td { background: rgba(90,100,255,0.04); }
+  .line-table td:first-child { color: var(--text); font-weight: 500; }
+  .line-table td.price-cell { color: var(--accent2); font-weight: 600; font-family: 'Poppins', sans-serif; white-space: nowrap; }
+  .line-table td.note-cell { font-size: 11px; color: var(--text3); }
+  /* ---- TAG ---- */
+  .tag {
+    display: inline-block; padding: 2px 8px; border-radius: 4px;
+    font-size: 10px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase;
+  }
+  .tag-pop { background: rgba(90,100,255,0.15); color: var(--accent); }
+  .tag-new { background: rgba(0,229,201,0.12); color: var(--accent2); }
+  .tag-one { background: rgba(249,115,22,0.12); color: var(--orange); }
+  /* ---- SECTION LABEL ---- */
+  .sub-section-label {
+    font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase;
+    color: var(--accent); margin: 20px 0 12px; padding: 0;
+  }
+  /* ---- PLATFORM GRID ---- */
+  .platform-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px,1fr)); gap: 12px; }
+  .platform-item {
+    background: var(--bg3); border: 1px solid var(--border); border-radius: 10px; padding: 16px;
+  }
+  .platform-name { font-weight: 600; font-size: 13px; margin-bottom: 4px; display: flex; align-items: center; gap: 8px; }
+  .platform-price { font-family: 'Poppins', sans-serif; font-size: 18px; font-weight: 700; color: var(--accent2); }
+  .platform-note { font-size: 11px; color: var(--text3); margin-top: 2px; }
+  .platform-features { margin-top: 10px; display: flex; flex-direction: column; gap: 5px; }
+  .platform-features li { font-size: 11px; color: var(--text2); list-style: none; display: flex; gap: 6px; }
+  .platform-features li::before { content: '→'; color: var(--accent); }
+  /* ---- BUNDLES ---- */
+  .bundle-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px,1fr)); gap: 20px; }
+  .bundle-card {
+    background: var(--card); border: 1px solid var(--border); border-radius: 18px;
+    padding: 28px; position: relative; overflow: hidden; transition: border-color 0.25s, transform 0.25s;
+  }
+  .bundle-card:hover { border-color: var(--border2); transform: translateY(-3px); }
+  .bundle-card.featured {
+    border-color: var(--accent);
+    background: linear-gradient(135deg, rgba(90,100,255,0.08), rgba(0,229,201,0.04));
+  }
+  .bundle-card::before {
+    content: ''; position: absolute; top: -60px; right: -60px;
+    width: 200px; height: 200px; border-radius: 50%;
+    background: radial-gradient(circle, rgba(90,100,255,0.08), transparent 70%);
+    pointer-events: none;
+  }
+  .bundle-badge {
+    display: inline-block; padding: 4px 12px; border-radius: 100px;
+    font-size: 10px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+  .bundle-card h3 { font-family: 'Poppins', sans-serif; font-size: 20px; font-weight: 700; margin-bottom: 6px; }
+  .bundle-desc { font-size: 12px; color: var(--text2); margin-bottom: 18px; }
+  .bundle-original {
+    font-size: 13px; color: var(--text3); text-decoration: line-through; margin-bottom: 2px;
+  }
+  .bundle-price {
+    display: flex; align-items: baseline; gap: 8px; margin-bottom: 8px;
+  }
+  .bundle-price .big { font-family: 'Poppins', sans-serif; font-size: 32px; font-weight: 800; }
+  .bundle-price .period { font-size: 12px; color: var(--text3); }
+  .bundle-savings {
+    display: inline-block; padding: 3px 10px; background: rgba(34,197,94,0.12);
+    color: var(--green); border-radius: 100px; font-size: 11px; font-weight: 600;
+    margin-bottom: 20px;
+  }
+  .bundle-includes { margin-bottom: 20px; }
+  .bundle-includes-label { font-size: 10px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--text3); margin-bottom: 10px; }
+  .bundle-item { display: flex; align-items: flex-start; gap: 8px; margin-bottom: 8px; }
+  .bundle-item .dot { width: 6px; height: 6px; border-radius: 50%; margin-top: 6px; flex-shrink: 0; }
+  .bundle-item span { font-size: 12px; color: var(--text2); }
+  .bundle-cta {
+    display: block; width: 100%; padding: 14px; text-align: center;
+    border-radius: 10px; font-size: 14px; font-weight: 700; cursor: pointer;
+    border: 1px solid var(--border2); background: transparent; color: var(--text);
+    font-family: 'Poppins', 'Inter', sans-serif; transition: all 0.25s;
+    letter-spacing: 0.3px;
+  }
+  .bundle-cta:hover { background: var(--accent); border-color: var(--accent); color: #1a0e16; }
+  .bundle-card.featured .bundle-cta {
+    background: var(--accent); border-color: var(--accent); color: #1a0e16;
+  }
+  /* ---- NOTES BANNER ---- */
+  .notes-banner {
+    background: rgba(90,100,255,0.07); border: 1px solid var(--border);
+    border-radius: 12px; padding: 18px 22px; margin-top: 30px;
+    display: flex; gap: 14px; align-items: flex-start;
+  }
+  .notes-banner .ni { font-size: 20px; }
+  .notes-banner h4 { font-family: 'Poppins', sans-serif; font-size: 13px; font-weight: 700; margin-bottom: 6px; }
+  .notes-banner ul { list-style: none; display: flex; flex-direction: column; gap: 4px; }
+  .notes-banner ul li { font-size: 12px; color: var(--text2); display: flex; gap: 8px; }
+  .notes-banner ul li::before { content: '·'; color: var(--accent2); }
+  /* ---- FOOTER ---- */
+  .footer {
+    text-align: center; padding: 40px; border-top: 1px solid var(--border);
+    color: var(--text3); font-size: 12px; margin-top: 60px;
+  }
+  .footer strong { color: var(--accent2); }
+  /* ---- COLORS ---- */
+  .c-blue { background: rgba(90,100,255,0.12); }
+  .c-cyan { background: rgba(0,229,201,0.1); }
+  .c-orange { background: rgba(249,115,22,0.12); }
+  .c-pink { background: rgba(255,107,107,0.12); }
+  .c-yellow { background: rgba(255,209,102,0.12); }
+  .c-green { background: rgba(34,197,94,0.1); }
+  .c-purple { background: rgba(168,85,247,0.1); }
+  .clr-blue { color: #7c86ff; }
+  .clr-cyan { color: var(--accent2); }
+  .clr-orange { color: var(--orange); }
+  .clr-pink { color: var(--accent3); }
+  .clr-yellow { color: var(--accent4); }
+  .clr-green { color: var(--green); }
+  .clr-purple { color: #c084fc; }
+  /* ---- RESPONSIVE ---- */
+  @media (max-width: 768px) {
+    .header { padding: 40px 20px; }
+    .content { padding: 24px 16px; }
+    .nav-wrapper { padding: 0 16px; }
+    .plan-cols { grid-template-columns: 1fr; }
+    .bundle-grid { grid-template-columns: 1fr; }
+  }
+  @media print {
+    .nav-wrapper { position: relative; }
+    .section { display: block !important; margin-top: 40px; }
+    .service-card-body { max-height: none !important; border-top: 1px solid var(--border) !important; }
+    body { background: white; color: black; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="header">
+  <div class="logo-badge">
+    <span class="logo-dot"></span>
+    Deeplink Creators — Official Pricing 2026
+  </div>
+  <h1>Service <span>Pricing</span><br>& Packages</h1>
+  <p>Transparent pricing for every service. Built for startups, SMBs, and enterprises across India.</p>
+  <div class="header-meta">
+    <div class="meta-chip">🇮🇳 <strong>GST Extra</strong> — 18% applicable</div>
+    <div class="meta-chip">📅 <strong>Valid:</strong> January – December 2026</div>
+    <div class="meta-chip">🔒 <strong>Custom quotes</strong> available on request</div>
+    <div class="meta-chip">💬 <strong>WhatsApp:</strong> +91 97193 64834</div>
+  </div>
+</div>
+
+<!-- NAV -->
+<div class="nav-wrapper">
+  <div class="nav-tabs">
+    <div class="nav-tab active" onclick="showSection('seo')">🔍 SEO</div>
+    <div class="nav-tab" onclick="showSection('smm')">📱 Social Media</div>
+    <div class="nav-tab" onclick="showSection('ads')">📢 Paid Ads</div>
+    <div class="nav-tab" onclick="showSection('content')">✉️ Content & Email</div>
+    <div class="nav-tab" onclick="showSection('influence')">🌟 Influence & ORM</div>
+    <div class="nav-tab" onclick="showSection('video')">🎬 Video & Analytics</div>
+    <div class="nav-tab" onclick="showSection('web')">🌐 Web Dev</div>
+    <div class="nav-tab" onclick="showSection('design')">🎨 Design & UI/UX</div>
+    <div class="nav-tab" onclick="showSection('app')">📲 Mobile Apps</div>
+    <div class="nav-tab" onclick="showSection('software')">⚙️ Software & Cloud</div>
+    <div class="nav-tab" onclick="showSection('emerging')">🚀 Emerging Tech</div>
+    <div class="nav-tab" onclick="showSection('bundles')">🎁 Bundles</div>
+  </div>
+</div>
+
+<div class="content">
+
+<!-- ════════════════════════════════════════════════════════════
+     SEO SECTION
+════════════════════════════════════════════════════════════ -->
+<div id="seo" class="section active">
+  <div class="sec-head">
+    <div class="sec-icon c-blue"><span class="clr-blue">🔍</span></div>
+    <div class="sec-head-text">
+      <h2>Search Engine Optimization (SEO)</h2>
+      <p>On-Page, Off-Page, and Technical SEO — complete search visibility packages designed to rank you higher and drive organic traffic.</p>
+    </div>
+  </div>
+  <div class="service-grid">
+
+    <!-- ON PAGE SEO -->
+    <div class="service-card" id="card-onpage">
+      <div class="service-card-header" onclick="toggleCard('card-onpage')">
+        <div class="service-card-header-left">
+          <div class="svc-icon c-blue"><span class="clr-blue">📄</span></div>
+          <div>
+            <div class="svc-title">On-Page SEO</div>
+            <div class="svc-sub">Keywords · Meta Tags · Content · Internal Linking · Schema</div>
+          </div>
+        </div>
+        <div style="display:flex;align-items:center;gap:16px">
+          <div class="svc-price-range">
+            <div class="price-main">₹8,000 – ₹28,000</div>
+            <div class="price-period">per month</div>
+          </div>
+          <span class="toggle-icon">▼</span>
+        </div>
+      </div>
+      <div class="service-card-body">
+        <div class="service-card-body-inner">
+          <div class="plan-cols">
+            <div class="plan-col">
+              <div class="plan-label">Starter</div>
+              <div class="plan-price">₹8,000</div>
+              <div class="plan-price-note">/ month</div>
+              <ul class="plan-features">
+                <li>Up to 10 pages optimized</li>
+                <li>15 target keywords</li>
+                <li>Title & meta description setup</li>
+                <li>Image alt-text optimization</li>
+                <li>Basic internal linking</li>
+                <li>1 monthly report</li>
+              </ul>
+            </div>
+            <div class="plan-col highlight">
+              <div class="plan-label">Growth <span class="tag tag-pop">Popular</span></div>
+              <div class="plan-price">₹16,000</div>
+              <div class="plan-price-note">/ month</div>
+              <ul class="plan-features">
+                <li>Up to 25 pages optimized</li>
+                <li>40 target keywords</li>
+                <li>Full meta + OG tags</li>
+                <li>Content gap analysis</li>
+                <li>Schema markup (FAQ/Article)</li>
+                <li>Advanced internal linking</li>
+                <li>Competitor keyword tracking</li>
+                <li>2 content briefs</li>
+                <li>Bi-weekly reporting</li>
+              </ul>
+            </div>
+            <div class="plan-col">
+              <div class="plan-label">Enterprise</div>
+              <div class="plan-price">₹28,000</div>
+              <div class="plan-price-note">/ month</div>
+              <ul class="plan-features">
+                <li>Unlimited pages</li>
+                <li>100+ keywords tracked</li>
+                <li>Full Schema markup suite</li>
+                <li>E-E-A-T content strategy</li>
+                <li>Topical authority mapping</li>
+                <li>Landing page CRO advice</li>
+                <li>4 content briefs/month</li>
+                <li>Weekly reporting + calls</li>
+              </ul>
+            </div>
+          </div>
+          <div class="sub-section-label">Individual Components (Standalone)</div>
+          <table class="line-table">
+            <tr><th>Component</th><th>Price</th><th>Unit</th><th>Notes</th></tr>
+            <tr><td>Keyword Research & Mapping</td><td class="price-cell">₹3,500</td><td>One-time / refresh</td><td class="note-cell">Up to 50 keywords</td></tr>
+            <tr><td>Meta Tags Optimization</td><td class="price-cell">₹2,000</td><td>One-time</td><td class="note-cell">Up to 15 pages</td></tr>
+            <tr><td>Content Rewriting / Optimization</td><td class="price-cell">₹1,500</td><td>per page/blog</td><td class="note-cell">Min 800 words</td></tr>
+            <tr><td>Internal Linking Audit & Fix</td><td class="price-cell">₹3,000</td><td>One-time</td><td class="note-cell">Full site</td></tr>
+            <tr><td>Image Optimization + Alt Text</td><td class="price-cell">₹1,500</td><td>One-time (up to 100 imgs)</td><td class="note-cell">Compression + naming</td></tr>
+            <tr><td>Schema Markup Setup</td><td class="price-cell">₹2,500</td><td>One-time</td><td class="note-cell">FAQ, Product, Article</td></tr>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- OFF PAGE SEO -->
+    <div class="service-card" id="card-offpage">
+      <div class="service-card-header" onclick="toggleCard('card-offpage')">
+        <div class="service-card-header-left">
+          <div class="svc-icon c-cyan"><span class="clr-cyan">🔗</span></div>
+          <div>
+            <div class="svc-title">Off-Page SEO</div>
+            <div class="svc-sub">Link Building · Guest Posts · Directory Submissions · Brand Mentions</div>
+          </div>
+        </div>
+        <div style="display:flex;align-items:center;gap:16px">
+          <div class="svc-price-range">
+            <div class="price-main">₹10,000 – ₹35,000</div>
+            <div class="price-period">per month</div>
+          </div>
+          <span class="toggle-icon">▼</span>
+        </div>
+      </div>
+      <div class="service-card-body">
+        <div class="service-card-body-inner">
+          <div class="plan-cols">
+            <div class="plan-col">
+              <div class="plan-label">Basic</div>
+              <div class="plan-price">₹10,000</div>
+              <div class="plan-price-note">/ month</div>
+              <ul class="plan-features">
+                <li>5 DA 20+ backlinks</li>
+                <li>10 directory submissions</li>
+                <li>5 social bookmarks</li>
+                <li>Q&A submissions (Quora)</li>
+                <li>Monthly link report</li>
+              </ul>
+            </div>
+            <div class="plan-col highlight">
+              <div class="plan-label">Standard <span class="tag tag-pop">Popular</span></div>
+              <div class="plan-price">₹20,000</div>
+              <div class="plan-price-note">/ month</div>
+              <ul class="plan-features">
+                <li>10 DA 40+ backlinks</li>
+                <li>2 Guest Posts (DA 30+)</li>
+                <li>20 directory submissions</li>
+                <li>Brand mention outreach</li>
+                <li>Competitor backlink gap analysis</li>
+                <li>Bi-weekly report</li>
+              </ul>
+            </div>
+            <div class="plan-col">
+              <div class="plan-label">Authority</div>
+              <div class="plan-price">₹35,000</div>
+              <div class="plan-price-note">/ month</div>
+              <ul class="plan-features">
+                <li>15 DA 50+ backlinks</li>
+                <li>4 Guest Posts (DA 50+)</li>
+                <li>2 Niche Edits</li>
+                <li>Press Release distribution</li>
+                <li>HARO link building</li>
+                <li>Weekly reporting + strategy call</li>
+              </ul>
+            </div>
+          </div>
+          <div class="sub-section-label">Individual Deliverables</div>
+          <table class="line-table">
+            <tr><th>Deliverable</th><th>Price</th><th>Unit</th><th>Notes</th></tr>
+            <tr><td>Guest Post (DA 20–30)</td><td class="price-cell">₹3,500</td><td>per post</td><td class="note-cell">Content included</td></tr>
+            <tr><td>Guest Post (DA 40–50)</td><td class="price-cell">₹6,000</td><td>per post</td><td class="note-cell">Content included</td></tr>
+            <tr><td>Guest Post (DA 60+)</td><td class="price-cell">₹12,000</td><td>per post</td><td class="note-cell">Premium site</td></tr>
+            <tr><td>Niche Edit / Link Insertion</td><td class="price-cell">₹4,000</td><td>per link</td><td class="note-cell">Existing article</td></tr>
+            <tr><td>Press Release Writing + Distribution</td><td class="price-cell">₹8,000</td><td>per PR</td><td class="note-cell">50+ news portals</td></tr>
+            <tr><td>Directory Submissions (50 sites)</td><td class="price-cell">₹2,500</td><td>one-time</td><td class="note-cell">Manual + verified</td></tr>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- TECHNICAL SEO -->
+    <div class="service-card" id="card-techseo">
+      <div class="service-card-header" onclick="toggleCard('card-techseo')">
+        <div class="service-card-header-left">
+          <div class="svc-icon c-orange"><span class="clr-orange">⚙️</span></div>
+          <div>
+            <div class="svc-title">Technical SEO</div>
+            <div class="svc-sub">Site Audit · Speed · Core Web Vitals · Crawlability · Structured Data</div>
+          </div>
+        </div>
+        <div style="display:flex;align-items:center;gap:16px">
+          <div class="svc-price-range">
+            <div class="price-main">₹12,000 – ₹40,000</div>
+            <div class="price-period">per month</div>
+          </div>
+          <span class="toggle-icon">▼</span>
+        </div>
+      </div>
+      <div class="service-card-body">
+        <div class="service-card-body-inner">
+          <div class="plan-cols">
+            <div class="plan-col">
+              <div class="plan-label">Audit Only</div>
+              <div class="plan-price">₹12,000</div>
+              <div class="plan-price-note">One-time</div>
+              <ul class="plan-features">
+                <li>Full site crawl & audit</li>
+                <li>Core Web Vitals report</li>
+                <li>Broken links & redirect check</li>
+                <li>Sitemap & robots.txt review</li>
+                <li>Detailed PDF report</li>
+              </ul>
+            </div>
+            <div class="plan-col highlight">
+              <div class="plan-label">Monthly Maintenance <span class="tag tag-pop">Popular</span></div>
+              <div class="plan-price">₹22,000</div>
+              <div class="plan-price-note">/ month</div>
+              <ul class="plan-features">
+                <li>Monthly audit + fixes</li>
+                <li>Page speed optimization</li>
+                <li>Mobile usability fixes</li>
+                <li>Canonical & duplicate checks</li>
+                <li>Google Search Console monitoring</li>
+                <li>Structured data updates</li>
+                <li>Monthly tech report</li>
+              </ul>
+            </div>
+            <div class="plan-col">
+              <div class="plan-label">Enterprise</div>
+              <div class="plan-price">₹40,000</div>
+              <div class="plan-price-note">/ month</div>
+              <ul class="plan-features">
+                <li>Everything in Monthly</li>
+                <li>JavaScript SEO audit</li>
+                <li>Log file analysis</li>
+                <li>Crawl budget optimization</li>
+                <li>Hreflang (multilingual)</li>
+                <li>Advanced schema suite</li>
+                <li>Dedicated tech SEO manager</li>
+              </ul>
+            </div>
+          </div>
+          <div class="sub-section-label">Standalone Services</div>
+          <table class="line-table">
+            <tr><th>Service</th><th>Price</th><th>Unit</th><th>Notes</th></tr>
+            <tr><td>Full Technical SEO Audit</td><td class="price-cell">₹12,000</td><td>one-time</td><td class="note-cell">Comprehensive report</td></tr>
+            <tr><td>Page Speed Optimization</td><td class="price-cell">₹8,000</td><td>one-time</td><td class="note-cell">Core Web Vitals focus</td></tr>
+            <tr><td>Sitemap XML Creation & Submission</td><td class="price-cell">₹2,000</td><td>one-time</td><td class="note-cell">All pages/types</td></tr>
+            <tr><td>Robots.txt + Crawl Fix</td><td class="price-cell">₹2,500</td><td>one-time</td><td class="note-cell">—</td></tr>
+            <tr><td>301 Redirect Mapping (Migration)</td><td class="price-cell">₹6,000</td><td>one-time</td><td class="note-cell">Up to 200 URLs</td></tr>
+            <tr><td>Google Search Console Setup</td><td class="price-cell">₹2,000</td><td>one-time</td><td class="note-cell">Includes GA4 linking</td></tr>
+            <tr><td>HTTPS Migration + Fix</td><td class="price-cell">₹4,000</td><td>one-time</td><td class="note-cell">SSL config + redirects</td></tr>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="notes-banner" style="margin-top:24px">
+    <span class="ni">💡</span>
+    <div>
+      <h4>SEO Notes</h4>
+      <ul>
+        <li>SEO results typically visible in 3–6 months. We do not guarantee rankings — no ethical agency does.</li>
+        <li>All plans include a free initial consultation and website audit worth ₹5,000.</li>
+        <li>Annual contracts get 15% off monthly pricing. Quarterly contracts get 8% off.</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+<!-- ════════════════════════════════════════════════════════════
+     SMM SECTION
+════════════════════════════════════════════════════════════ -->
+<div id="smm" class="section">
+  <div class="sec-head">
+    <div class="sec-icon c-pink"><span class="clr-pink">📱</span></div>
+    <div class="sec-head-text">
+      <h2>Social Media Marketing (SMM)</h2>
+      <p>Content posting, reels creation, and community management across Facebook, Instagram, Twitter/X, LinkedIn, and Pinterest.</p>
+    </div>
+  </div>
+
+  <div class="service-grid">
+    <!-- PER PLATFORM -->
+    <div class="service-card" id="card-smm-platform">
+      <div class="service-card-header" onclick="toggleCard('card-smm-platform')">
+        <div class="service-card-header-left">
+          <div class="svc-icon c-pink"><span class="clr-pink">📊</span></div>
+          <div>
+            <div class="svc-title">Per Platform Pricing</div>
+            <div class="svc-sub">Facebook · Instagram · Twitter/X · LinkedIn · Pinterest</div>
+          </div>
+        </div>
+        <div style="display:flex;align-items:center;gap:16px">
+          <div class="svc-price-range">
+            <div class="price-main">₹6,000 – ₹14,000</div>
+            <div class="price-period">per platform/month</div>
+          </div>
+          <span class="toggle-icon">▼</span>
+        </div>
+      </div>
+      <div class="service-card-body">
+        <div class="service-card-body-inner">
+          <div class="platform-grid">
+            <div class="platform-item">
+              <div class="platform-name">📘 Facebook</div>
+              <div class="platform-price">₹8,000/mo</div>
+              <div class="platform-note">Page Management</div>
+              <ul class="platform-features">
+                <li>12 posts / month</li>
+                <li>4 stories / month</li>
+                <li>Community management</li>
+                <li>Insights report</li>
+              </ul>
+            </div>
+            <div class="platform-item">
+              <div class="platform-name">📸 Instagram</div>
+              <div class="platform-price">₹10,000/mo</div>
+              <div class="platform-note">Feed + Reels + Stories</div>
+              <ul class="platform-features">
+                <li>12 feed posts / month</li>
+                <li>4 reels / month</li>
+                <li>8 stories / month</li>
+                <li>DM community management</li>
+              </ul>
+            </div>
+            <div class="platform-item">
+              <div class="platform-name">🐦 Twitter / X</div>
+              <div class="platform-price">₹7,000/mo</div>
+              <div class="platform-note">Tweets + Threads</div>
+              <ul class="platform-features">
+                <li>15 tweets / month</li>
+                <li>2 threads / month</li>
+                <li>Mentions monitoring</li>
+                <li>Monthly analytics</li>
+              </ul>
+            </div>
+            <div class="platform-item">
+              <div class="platform-name">💼 LinkedIn</div>
+              <div class="platform-price">₹12,000/mo</div>
+              <div class="platform-note">Brand + Thought Leadership</div>
+              <ul class="platform-features">
+                <li>12 posts / month</li>
+                <li>2 articles / month</li>
+                <li>Profile optimization</li>
+                <li>B2B engagement management</li>
+              </ul>
+            </div>
+            <div class="platform-item">
+              <div class="platform-name">📌 Pinterest</div>
+              <div class="platform-price">₹6,000/mo</div>
+              <div class="platform-note">Pins + Boards</div>
+              <ul class="platform-features">
+                <li>20 pins / month</li>
+                <li>3 boards managed</li>
+                <li>SEO-optimized descriptions</li>
+                <li>Monthly report</li>
+              </ul>
+            </div>
+          </div>
+          <div class="notes-banner" style="margin-top:16px">
+            <span class="ni">💰</span>
+            <div>
+              <h4>Multi-Platform Discount</h4>
+              <ul>
+                <li>2 platforms → 5% off total</li>
+                <li>3 platforms → 10% off total</li>
+                <li>4+ platforms → 15% off total</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CONTENT POSTING -->
+    <div class="service-card" id="card-smm-content">
+      <div class="service-card-header" onclick="toggleCard('card-smm-content')">
+        <div class="service-card-header-left">
+          <div class="svc-icon c-yellow"><span class="clr-yellow">📝</span></div>
+          <div>
+            <div class="svc-title">Content Posting (Standalone)</div>
+            <div class="svc-sub">Graphic design + Caption writing + Scheduling</div>
+          </div>
+        </div>
+        <div style="display:flex;align-items:center;gap:16px">
+          <div class="svc-price-range">
+            <div class="price-main">₹300 – ₹800</div>
+            <div class="price-period">per post</div>
+          </div>
+          <span class="toggle-icon">▼</span>
+        </div>
+      </div>
+      <div class="service-card-body">
+        <div class="service-card-body-inner">
+          <table class="line-table">
+            <tr><th>Content Type</th><th>Price</th><th>Includes</th></tr>
+            <tr><td>Static Graphic Post (1 platform)</td><td class="price-cell">₹300</td><td>Design + Caption + Hashtags</td></tr>
+            <tr><td>Static Graphic Post (multi-platform)</td><td class="price-cell">₹450</td><td>Resized for each platform</td></tr>
+            <tr><td>Carousel Post (5–8 slides)</td><td class="price-cell">₹700</td><td>Design + Copy + CTA</td></tr>
+            <tr><td>Story Template (set of 3)</td><td class="price-cell">₹500</td><td>Branded + interactive elements</td></tr>
+            <tr><td>Infographic</td><td class="price-cell">₹1,200</td><td>Research + design</td></tr>
+            <tr><td>Monthly Content Calendar (30 ideas)</td><td class="price-cell">₹3,000</td><td>Topic + caption drafts</td></tr>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- REELS -->
+    <div class="service-card" id="card-smm-reels">
+      <div class="service-card-header" onclick="toggleCard('card-smm-reels')">
+        <div class="service-card-header-left">
+          <div class="svc-icon c-cyan"><span class="clr-cyan">🎬</span></div>
+          <div>
+            <div class="svc-title">Reels / Short-Form Videos</div>
+            <div class="svc-sub">Instagram Reels · Facebook Reels · YouTube Shorts · LinkedIn Videos</div>
+          </div>
+        </div>
+        <div style="display:flex;align-items:center;gap:16px">
+          <div class="svc-price-range">
+            <div class="price-main">₹2,500 – ₹8,000</div>
+            <div class="price-period">per reel</div>
+          </div>
+          <span class="toggle-icon">▼</span>
+        </div>
+      </div>
+      <div class="service-card-body">
+        <div class="service-card-body-inner">
+          <table class="line-table">
+            <tr><th>Type</th><th>Price</th><th>Duration</th><th>Includes</th></tr>
+            <tr><td>Basic Reel (client footage)</td><td class="price-cell">₹2,500</td><td>15–30 sec</td><td>Edit + music + text overlays + captions</td></tr>
+            <tr><td>Standard Reel (stock + graphics)</td><td class="price-cell">₹4,000</td><td>30–60 sec</td><td>Script + motion graphics + VO-ready</td></tr>
+            <tr><td>Premium Reel (full production)</td><td class="price-cell">₹8,000</td><td>Up to 90 sec</td><td>Script + shoot coordination + advanced edit</td></tr>
+            <tr><td>Trending Audio Adaptation</td><td class="price-cell">₹1,500</td><td>15 sec</td><td>Trend + brand adaptation</td></tr>
+            <tr><td>Reel Bundle – 4 reels/month</td><td class="price-cell">₹9,000</td><td>—</td><td>Standard type, save ₹7,000</td></tr>
+            <tr><td>Reel Bundle – 8 reels/month</td><td class="price-cell">₹18,000</td><td>—</td><td>Mix of basic + standard, save ₹14,000</td></tr>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- COMMUNITY MANAGEMENT -->
+    <div class="service-card" id="card-smm-community">
+      <div class="service-card-header" onclick="toggleCard('card-smm-community')">
+        <div class="service-card-header-left">
+          <div class="svc-icon c-green"><span class="clr-green">💬</span></div>
+          <div>
+            <div class="svc-title">Community Management</div>
+            <div class="svc-sub">Comments · DMs · Reviews · Engagement · Moderation</div>
+          </div>
+        </div>
+        <div style="display:flex;align-items:center;gap:16px">
+          <div class="svc-price-range">
+            <div class="price-main">₹5,000 – ₹18,000</div>
+            <div class="price-period">per month</div>
+          </div>
+          <span class="toggle-icon">▼</span>
+        </div>
+      </div>
+      <div class="service-card-body">
+        <div class="service-card-body-inner">
+          <table class="line-table">
+            <tr><th>Plan</th><th>Price/mo</th><th>Platforms</th><th>Includes</th></tr>
+            <tr><td>Basic</td><td class="price-cell">₹5,000</td><td>1 platform</td><td>Comment replies + DM responses (business hours)</td></tr>
+            <tr><td>Standard</td><td class="price-cell">₹10,000</td><td>2 platforms</td><td>All basic + review responses + engagement boosts</td></tr>
+            <tr><td>Premium</td><td class="price-cell">₹18,000</td><td>Up to 4 platforms</td><td>24×7 monitoring + crisis management + monthly report</td></tr>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ════════════════════════════════════════════════════════════
+     PAID ADS SECTION
+════════════════════════════════════════════════════════════ -->
+<div id="ads" class="section">
+  <div class="sec-head">
+    <div class="sec-icon c-yellow"><span class="clr-yellow">📢</span></div>
+    <div class="sec-head-text">
+      <h2>Paid Advertising</h2>
+      <p>Google Ads (Search, Display, YouTube) and Social Media Ads (Facebook, Instagram). Management fee charged on ad spend — ad budget paid directly by client.</p>
+    </div>
+  </div>
+  <div class="service-grid">
+
+    <!-- GOOGLE ADS -->
+    <div class="service-card" id="card-google-ads">
+      <div class="service-card-header" onclick="toggleCard('card-google-ads')">
+        <div class="service-card-header-left">
+          <div class="svc-icon c-yellow"><span class="clr-yellow">🔎</span></div>
+          <div>
+            <div class="svc-title">Google Ads</div>
+            <div class="svc-sub">Search · Display · YouTube — Setup + Management</div>
+          </div>
+        </div>
+        <div style="display:flex;align-items:center;gap:16px">
+          <div class="svc-price-range">
+            <div class="price-main">12–15% of ad spend</div>
+            <div class="price-period">+ one-time setup fee</div>
+          </div>
+          <span class="toggle-icon">▼</span>
+        </div>
+      </div>
+      <div class="service-card-body">
+        <div class="service-card-body-inner">
+          <table class="line-table">
+            <tr><th>Ad Type</th><th>Setup Fee</th><th>Monthly Mgmt</th><th>Min. Ad Budget</th><th>Includes</th></tr>
+            <tr>
+              <td>🔍 Search Ads</td>
+              <td class="price-cell">₹8,000</td>
+              <td class="price-cell">12% of spend (min ₹8,000)</td>
+              <td>₹20,000/mo</td>
+              <td>Campaign setup, keyword research, ad copy, A/B testing, monthly report</td>
+            </tr>
+            <tr>
+              <td>🖼️ Display Ads</td>
+              <td class="price-cell">₹6,000</td>
+              <td class="price-cell">12% of spend (min ₹6,000)</td>
+              <td>₹15,000/mo</td>
+              <td>Banner design (up to 5 sizes), targeting, retargeting setup, report</td>
+            </tr>
+            <tr>
+              <td>▶️ YouTube Ads</td>
+              <td class="price-cell">₹8,000</td>
+              <td class="price-cell">12% of spend (min ₹7,000)</td>
+              <td>₹20,000/mo</td>
+              <td>In-stream + bumper ad setup, audience targeting, script consultation, report</td>
+            </tr>
+            <tr>
+              <td>🔀 All 3 Types (Combined)</td>
+              <td class="price-cell">₹18,000</td>
+              <td class="price-cell">10% of total spend (min ₹18,000)</td>
+              <td>₹50,000/mo</td>
+              <td>Full account management, unified reporting, dedicated manager</td>
+            </tr>
+          </table>
+          <div class="notes-banner" style="margin-top:16px">
+            <span class="ni">ℹ️</span>
+            <div>
+              <h4>Billing Structure</h4>
+              <ul>
+                <li>Ad budget is billed directly by Google to the client's card / account.</li>
+                <li>Our management fee is invoiced separately monthly.</li>
+                <li>For spend above ₹1,00,000/mo, management fee reduces to 10%.</li>
+                <li>For spend above ₹3,00,000/mo, management fee reduces to 8%.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SOCIAL MEDIA ADS -->
+    <div class="service-card" id="card-social-ads">
+      <div class="service-card-header" onclick="toggleCard('card-social-ads')">
+        <div class="service-card-header-left">
+          <div class="svc-icon c-pink"><span class="clr-pink">🎯</span></div>
+          <div>
+            <div class="svc-title">Social Media Ads</div>
+            <div class="svc-sub">Facebook Ads · Instagram Ads — Setup + Management</div>
+          </div>
+        </div>
+        <div style="display:flex;align-items:center;gap:16px">
+          <div class="svc-price-range">
+            <div class="price-main">12–15% of ad spend</div>
+            <div class="price-period">+ one-time setup fee</div>
+          </div>
+          <span class="toggle-icon">▼</span>
+        </div>
+      </div>
+      <div class="service-card-body">
+        <div class="service-card-body-inner">
+          <table class="line-table">
+            <tr><th>Platform</th><th>Setup Fee</th><th>Monthly Mgmt</th><th>Min. Ad Budget</th><th>Includes</th></tr>
+            <tr>
+              <td>📘 Facebook Ads</td>
+              <td class="price-cell">₹6,000</td>
+              <td class="price-cell">12% of spend (min ₹6,000)</td>
+              <td>₹15,000/mo</td>
+              <td>Campaign setup, audience targeting, ad creative input, pixel setup, reporting</td>
+            </tr>
+            <tr>
+              <td>📸 Instagram Ads</td>
+              <td class="price-cell">₹6,000</td>
+              <td class="price-cell">12% of spend (min ₹6,000)</td>
+              <td>₹15,000/mo</td>
+              <td>Stories + feed + reels ads, audience targeting, A/B testing, reporting</td>
+            </tr>
+            <tr>
+              <td>📘📸 FB + Instagram Combined</td>
+              <td class="price-cell">₹10,000</td>
+              <td class="price-cell">10% of total spend (min ₹10,000)</td>
+              <td>₹25,000/mo</td>
+              <td>Unified Meta Ads Manager, cross-platform audience, dedicated reporting</td>
+            </tr>
+          </table>
+          <div class="sub-section-label">Ad Creative Services (Add-On)</div>
+          <table class="line-table">
+            <tr><th>Creative Type</th><th>Price</th><th>Notes</th></tr>
+            <tr><td>Static Ad Banner (set of 3)</td><td class="price-cell">₹2,000</td><td>Platform-specific sizes</td></tr>
+            <tr><td>Video Ad (15–30 sec)</td><td class="price-cell">₹4,000</td><td>Edited from client footage</td></tr>
+            <tr><td>Carousel Ad (5 cards)</td><td class="price-cell">₹2,500</td><td>Product or storytelling format</td></tr>
+            <tr><td>Lead Form Setup</td><td class="price-cell">₹2,000</td><td>Facebook/Instagram native form</td></tr>
+            <tr><td>Retargeting Campaign Setup</td><td class="price-cell">₹4,000</td><td>Pixel + audience + campaign</td></tr>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ════════════════════════════════════════════════════════════
+     CONTENT & EMAIL SECTION
+════════════════════════════════════════════════════════════ -->
+<div id="content" class="section">
+  <div class="sec-head">
+    <div class="sec-icon c-green"><span class="clr-green">✉️</span></div>
+    <div class="sec-head-text">
+      <h2>Content Marketing & Email Campaigns</h2>
+      <p>Mailchimp, HubSpot, and Zoho Campaigns — newsletter strategy, automation setup, and ongoing management.</p>
+    </div>
+  </div>
+  <div class="service-grid">
+    <div class="service-card" id="card-email">
+      <div class="service-card-header" onclick="toggleCard('card-email')">
+        <div class="service-card-header-left">
+          <div class="svc-icon c-green"><span class="clr-green">📧</span></div>
+          <div>
+            <div class="svc-title">Email Marketing Platforms</div>
+            <div class="svc-sub">Mailchimp · HubSpot · Zoho Campaigns</div>
+          </div>
+        </div>
+        <div style="display:flex;align-items:center;gap:16px">
+          <div class="svc-price-range">
+            <div class="price-main">₹8,000 – ₹20,000</div>
+            <div class="price-period">per month</div>
+          </div>
+          <span class="toggle-icon">▼</span>
+        </div>
+      </div>
+      <div class="service-card-body">
+        <div class="service-card-body-inner">
+          <div class="platform-grid">
+            <div class="platform-item">
+              <div class="platform-name">📬 Mailchimp</div>
+              <div class="platform-price">₹8,000/mo</div>
+              <div class="platform-note">Best for small–mid business</div>
+              <ul class="platform-features">
+                <li>Account setup & branding</li>
+                <li>2 campaigns/month</li>
+                <li>List management + segmentation</li>
+                <li>Performance report</li>
+              </ul>
+            </div>
+            <div class="platform-item">
+              <div class="platform-name">🔶 HubSpot</div>
+              <div class="platform-price">₹20,000/mo</div>
+              <div class="platform-note">Best for B2B & automation</div>
+              <ul class="platform-features">
+                <li>Full CRM + email setup</li>
+                <li>3 campaigns + automations</li>
+                <li>Lead scoring setup</li>
+                <li>A/B testing + analytics</li>
+              </ul>
+            </div>
+            <div class="platform-item">
+              <div class="platform-name">🟣 Zoho Campaigns</div>
+              <div class="platform-price">₹10,000/mo</div>
+              <div class="platform-note">Best for Zoho CRM users</div>
+              <ul class="platform-features">
+                <li>Template design + setup</li>
+                <li>3 campaigns/month</li>
+                <li>Automation workflows</li>
+                <li>Analytics + CTR report</li>
+              </ul>
+            </div>
+          </div>
+          <div class="sub-section-label">Individual Email Services</div>
+          <table class="line-table">
+            <tr><th>Service</th><th>Price</th><th>Unit</th></tr>
+            <tr><td>Email Template Design (branded)</td><td class="price-cell">₹3,500</td><td>one-time per template</td></tr>
+            <tr><td>Welcome Email Sequence (5 emails)</td><td class="price-cell">₹8,000</td><td>one-time</td></tr>
+            <tr><td>Drip Campaign Setup (10 emails)</td><td class="price-cell">₹14,000</td><td>one-time</td></tr>
+            <tr><td>Newsletter Writing + Design</td><td class="price-cell">₹2,500</td><td>per newsletter</td></tr>
+            <tr><td>List Cleanup & Segmentation</td><td class="price-cell">₹4,000</td><td>one-time</td></tr>
+            <tr><td>A/B Test Setup + Analysis</td><td class="price-cell">₹3,000</td><td>per campaign</td></tr>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- WHATSAPP / SMS -->
+    <div class="service-card" id="card-whasms">
+      <div class="service-card-header" onclick="toggleCard('card-whasms')">
+        <div class="service-card-header-left">
+          <div class="svc-icon c-green"><span class="clr-green">💬</span></div>
+          <div>
+            <div class="svc-title">WhatsApp & SMS Marketing</div>
+            <div class="svc-sub">Bulk messaging · Automation · Chatbot setup · Campaign management</div>
+          </div>
+        </div>
+        <div style="display:flex;align-items:center;gap:16px">
+          <div class="svc-price-range">
+            <div class="price-main">₹6,000 – ₹18,000</div>
+            <div class="price-period">per month</div>
+          </div>
+          <span class="toggle-icon">▼</span>
+        </div>
+      </div>
+      <div class="service-card-body">
+        <div class="service-card-body-inner">
+          <table class="line-table">
+            <tr><th>Service</th><th>Price</th><th>Unit</th><th>Notes</th></tr>
+            <tr><td>WhatsApp Business API Setup</td><td class="price-cell">₹8,000</td><td>one-time</td><td class="note-cell">WABA + template approval</td></tr>
+            <tr><td>WhatsApp Chatbot Setup</td><td class="price-cell">₹12,000</td><td>one-time</td><td class="note-cell">FAQ bot + lead routing</td></tr>
+            <tr><td>WhatsApp Campaign Management</td><td class="price-cell">₹8,000</td><td>per month</td><td class="note-cell">2 campaigns, message copy, list mgmt</td></tr>
+            <tr><td>Bulk SMS Campaign</td><td class="price-cell">₹5,000</td><td>per campaign</td><td class="note-cell">Upto 10,000 messages (excl. SMS cost)</td></tr>
+            <tr><td>SMS Automation Setup</td><td class="price-cell">₹6,000</td><td>one-time</td><td class="note-cell">OTP / transactional / promo flows</td></tr>
+            <tr><td>Monthly WhatsApp + SMS Management</td><td class="price-cell">₹12,000</td><td>per month</td><td class="note-cell">3 campaigns, full management</td></tr>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ════════════════════════════════════════════════════════════
+     INFLUENCE & ORM
+════════════════════════════════════════════════════════════ -->
+<div id="influence" class="section">
+  <div class="sec-head">
+    <div class="sec-icon c-purple"><span class="clr-purple">🌟</span></div>
+    <div class="sec-head-text">
+      <h2>Influencer Marketing & ORM</h2>
+      <p>Influencer discovery, outreach, and campaign management — plus Online Reputation Management to protect and build your brand image.</p>
+    </div>
+  </div>
+  <div class="service-grid">
+    <div class="service-card" id="card-influencer">
+      <div class="service-card-header" onclick="toggleCard('card-influencer')">
+        <div class="service-card-header-left">
+          <div class="svc-icon c-purple"><span class="clr-purple">🌟</span></div>
+          <div>
+            <div class="svc-title">Influencer Marketing</div>
+            <div class="svc-sub">Micro · Macro · Mega — Discovery, Outreach, Campaign Management</div>
+          </div>
+        </div>
+        <div style="display:flex;align-items:center;gap:16px">
+          <div class="svc-price-range">
+            <div class="price-main">₹8,000 – ₹30,000+</div>
+            <div class="price-period">management fee / campaign</div>
+          </div>
+          <span class="toggle-icon">▼</span>
+        </div>
+      </div>
+      <div class="service-card-body">
+        <div class="service-card-body-inner">
+          <div class="sub-section-label">Agency Management Fee (Influencer Cost Separate)</div>
+          <table class="line-table">
+            <tr><th>Tier</th><th>Followers</th><th>Est. Influencer Cost</th><th>Our Mgmt Fee</th><th>Includes</th></tr>
+            <tr><td>Nano Influencers</td><td>1K–10K</td><td>₹2,000–₹10,000/post</td><td class="price-cell">₹8,000/campaign</td><td>3–5 influencers, outreach, brief, reporting</td></tr>
+            <tr><td>Micro Influencers</td><td>10K–100K</td><td>₹10,000–₹50,000/post</td><td class="price-cell">₹12,000/campaign</td><td>2–3 influencers, full campaign management</td></tr>
+            <tr><td>Macro Influencers</td><td>100K–1M</td><td>₹50,000–₹2,00,000/post</td><td class="price-cell">₹20,000/campaign</td><td>1–2 influencers, contract review, analytics</td></tr>
+            <tr><td>Mega / Celebrity</td><td>1M+</td><td>₹2,00,000+/post</td><td class="price-cell">₹30,000+/campaign</td><td>Full end-to-end management, negotiation, reporting</td></tr>
+          </table>
+          <div class="sub-section-label">Standalone Services</div>
+          <table class="line-table">
+            <tr><th>Service</th><th>Price</th></tr>
+            <tr><td>Influencer Discovery + Vetting (10 profiles)</td><td class="price-cell">₹5,000</td></tr>
+            <tr><td>Brief & Script Writing</td><td class="price-cell">₹3,000 per influencer</td></tr>
+            <tr><td>Campaign Report + ROI Analysis</td><td class="price-cell">₹4,000 per campaign</td></tr>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- ORM -->
+    <div class="service-card" id="card-orm">
+      <div class="service-card-header" onclick="toggleCard('card-orm')">
+        <div class="service-card-header-left">
+          <div class="svc-icon c-orange"><span class="clr-orange">🛡️</span></div>
+          <div>
+            <div class="svc-title">Online Reputation Management (ORM)</div>
+            <div class="svc-sub">Review Management · Brand Monitoring · Negative Content Suppression</div>
+          </div>
+        </div>
+        <div style="display:flex;align-items:center;gap:16px">
+          <div class="svc-price-range">
+            <div class="price-main">₹15,000 – ₹45,000</div>
+            <div class="price-period">per month</div>
+          </div>
+          <span class="toggle-icon">▼</span>
+        </div>
+      </div>
+      <div class="service-card-body">
+        <div class="service-card-body-inner">
+          <div class="plan-cols">
+            <div class="plan-col">
+              <div class="plan-label">Basic</div>
+              <div class="plan-price">₹15,000</div>
+              <div class="plan-price-note">/ month</div>
+              <ul class="plan-features">
+                <li>Google + GMB review monitoring</li>
+                <li>Review response management</li>
+                <li>Brand mention alerts</li>
+                <li>Monthly reputation report</li>
+              </ul>
+            </div>
+            <div class="plan-col highlight">
+              <div class="plan-label">Standard <span class="tag tag-pop">Popular</span></div>
+              <div class="plan-price">₹28,000</div>
+              <div class="plan-price-note">/ month</div>
+              <ul class="plan-features">
+                <li>Everything in Basic</li>
+                <li>Social media ORM</li>
+                <li>Negative review dispute support</li>
+                <li>Positive content creation (2 pieces)</li>
+                <li>SERP monitoring (10 keywords)</li>
+              </ul>
+            </div>
+            <div class="plan-col">
+              <div class="plan-label">Enterprise</div>
+              <div class="plan-price">₹45,000</div>
+              <div class="plan-price-note">/ month</div>
+              <ul class="plan-features">
+                <li>Full-scale brand monitoring</li>
+                <li>Negative content suppression (SEO)</li>
+                <li>Crisis management protocol</li>
+                <li>4 positive content pieces/month</li>
+                <li>Press release for reputation building</li>
+                <li>Weekly ORM report</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ════════════════════════════════════════════════════════════
+     VIDEO & ANALYTICS
+════════════════════════════════════════════════════════════ -->
+<div id="video" class="section">
+  <div class="sec-head">
+    <div class="sec-icon c-orange"><span class="clr-orange">🎬</span></div>
+    <div class="sec-head-text">
+      <h2>Video Marketing & Analytics & Reporting</h2>
+      <p>Full video production and marketing services + comprehensive data analytics, dashboards, and reporting.</p>
+    </div>
+  </div>
+  <div class="service-grid">
+    <div class="service-card" id="card-video">
+      <div class="service-card-header" onclick="toggleCard('card-video')">
+        <div class="service-card-header-left">
+          <div class="svc-icon c-orange"><span class="clr-orange">🎥</span></div>
+          <div>
+            <div class="svc-title">Video Marketing</div>
+            <div class="svc-sub">Explainer · Brand · Product · Testimonial · YouTube Strategy</div>
+          </div>
+        </div>
+        <div style="display:flex;align-items:center;gap:16px">
+          <div class="svc-price-range">
+            <div class="price-main">₹3,000 – ₹60,000+</div>
+            <div class="price-period">per video</div>
+          </div>
+          <span class="toggle-icon">▼</span>
+        </div>
+      </div>
+      <div class="service-card-body">
+        <div class="service-card-body-inner">
+          <table class="line-table">
+            <tr><th>Service</th><th>Price</th><th>Duration</th><th>Notes</th></tr>
+            <tr><td>Script Writing</td><td class="price-cell">₹3,000</td><td>—</td><td class="note-cell">Per video script, up to 500 words</td></tr>
+            <tr><td>Basic Video Editing (client footage)</td><td class="price-cell">₹5,000</td><td>Up to 3 min</td><td class="note-cell">Cuts, music, text, color grade</td></tr>
+            <tr><td>Motion Graphics / Animated Explainer</td><td class="price-cell">₹18,000</td><td>60–90 sec</td><td class="note-cell">Full 2D animation + voiceover</td></tr>
+            <tr><td>Brand Video (stock-based)</td><td class="price-cell">₹15,000</td><td>60–120 sec</td><td class="note-cell">Stock footage + graphics + script</td></tr>
+            <tr><td>Product Demo Video</td><td class="price-cell">₹20,000</td><td>2–3 min</td><td class="note-cell">Requires product assets / shoot</td></tr>
+            <tr><td>Testimonial Video Editing</td><td class="price-cell">₹6,000</td><td>Per video</td><td class="note-cell">Client provides raw footage</td></tr>
+            <tr><td>YouTube Channel Setup & Optimization</td><td class="price-cell">₹8,000</td><td>One-time</td><td class="note-cell">Branding, SEO, playlists, about section</td></tr>
+            <tr><td>YouTube Monthly Management</td><td class="price-cell">₹12,000</td><td>Per month</td><td class="note-cell">4 videos/month (editing + upload + SEO)</td></tr>
+            <tr><td>YouTube Thumbnail Design (5 set)</td><td class="price-cell">₹2,500</td><td>One-time</td><td class="note-cell">Click-optimized design</td></tr>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- ANALYTICS -->
+    <div class="service-card" id="card-analytics">
+      <div class="service-card-header" onclick="toggleCard('card-analytics')">
+        <div class="service-card-header-left">
+          <div class="svc-icon c-blue"><span class="clr-blue">📊</span></div>
+          <div>
+            <div class="svc-title">Analytics & Reporting</div>
+            <div class="svc-sub">GA4 · Search Console · Dashboards · Custom Reports · Insights</div>
+          </div>
+        </div>
+        <div style="display:flex;align-items:center;gap:16px">
+          <div class="svc-price-range">
+            <div class="price-main">₹5,000 – ₹22,000</div>
+            <div class="price-period">per month</div>
+          </div>
+          <span class="toggle-icon">▼</span>
+        </div>
+      </div>
+      <div class="service-card-body">
+        <div class="service-card-body-inner">
+          <div class="plan-cols">
+            <div class="plan-col">
+              <div class="plan-label">Basic</div>
+              <div class="plan-price">₹5,000</div>
+              <div class="plan-price-note">/ month</div>
+              <ul class="plan-features">
+                <li>GA4 + GSC setup</li>
+                <li>Monthly traffic report</li>
+                <li>Top landing pages analysis</li>
+                <li>PDF summary report</li>
+              </ul>
+            </div>
+            <div class="plan-col highlight">
+              <div class="plan-label">Advanced</div>
+              <div class="plan-price">₹12,000</div>
+              <div class="plan-price-note">/ month</div>
+              <ul class="plan-features">
+                <li>Everything in Basic</li>
+                <li>Custom Looker Studio dashboard</li>
+                <li>Conversion tracking setup</li>
+                <li>Multi-channel attribution</li>
+                <li>Bi-weekly reporting calls</li>
+              </ul>
+            </div>
+            <div class="plan-col">
+              <div class="plan-label">Enterprise</div>
+              <div class="plan-price">₹22,000</div>
+              <div class="plan-price-note">/ month</div>
+              <ul class="plan-features">
+                <li>Full analytics suite</li>
+                <li>Real-time custom dashboard</li>
+                <li>Heatmap & session recording</li>
+                <li>Funnel + cohort analysis</li>
+                <li>Weekly calls + action plans</li>
+                <li>Competitor benchmarking</li>
+              </ul>
+            </div>
+          </div>
+          <div class="sub-section-label">Standalone Setup Services</div>
+          <table class="line-table">
+            <tr><th>Service</th><th>Price</th><th>Unit</th></tr>
+            <tr><td>GA4 Setup + Configuration</td><td class="price-cell">₹5,000</td><td>one-time</td></tr>
+            <tr><td>Looker Studio Dashboard (custom)</td><td class="price-cell">₹8,000</td><td>one-time</td></tr>
+            <tr><td>Event & Conversion Tracking Setup</td><td class="price-cell">₹6,000</td><td>one-time</td></tr>
+            <tr><td>Hotjar / Microsoft Clarity Setup</td><td class="price-cell">₹3,000</td><td>one-time</td></tr>
+            <tr><td>Monthly Custom Report (one-off)</td><td class="price-cell">₹4,000</td><td>per report</td></tr>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ════════════════════════════════════════════════════════════
+     WEB DEVELOPMENT
+════════════════════════════════════════════════════════════ -->
+<div id="web" class="section">
+  <div class="sec-head">
+    <div class="sec-icon c-cyan"><span class="clr-cyan">🌐</span></div>
+    <div class="sec-head-text">
+      <h2>Website Development</h2>
+      <p>Landing pages, corporate websites, e-commerce stores — across Shopify, WooCommerce, Wix, WordPress, and fully custom stacks.</p>
+    </div>
+  </div>
+  <div class="service-grid">
+    <div class="service-card" id="card-web-types">
+      <div class="service-card-header" onclick="toggleCard('card-web-types')">
+        <div class="service-card-header-left">
+          <div class="svc-icon c-cyan"><span class="clr-cyan">🖥️</span></div>
+          <div>
+            <div class="svc-title">Website Development — By Type</div>
+            <div class="svc-sub">Landing Pages · Corporate · E-Commerce · All platforms</div>
+          </div>
+        </div>
+        <div style="display:flex;align-items:center;gap:16px">
+          <div class="svc-price-range">
+            <div class="price-main">₹12,000 – ₹2,50,000</div>
+            <div class="price-period">one-time</div>
+          </div>
+          <span class="toggle-icon">▼</span>
+        </div>
+      </div>
+      <div class="service-card-body">
+        <div class="service-card-body-inner">
+          <div class="sub-section-label">Landing Pages</div>
+          <table class="line-table">
+            <tr><th>Type</th><th>Platform</th><th>Price</th><th>Delivery</th><th>Includes</th></tr>
+            <tr><td>Single Landing Page</td><td>WordPress / HTML</td><td class="price-cell">₹12,000</td><td>5–7 days</td><td>Design + Dev + Mobile Responsive + Basic SEO</td></tr>
+            <tr><td>Sales Funnel Landing Page</td><td>WordPress</td><td class="price-cell">₹20,000</td><td>7–10 days</td><td>+ Lead form + thank you page + pixel setup</td></tr>
+            <tr><td>Wix Landing Page</td><td>Wix</td><td class="price-cell">₹12,000</td><td>5–7 days</td><td>Wix designer + responsive + basic forms</td></tr>
+          </table>
+          <div class="sub-section-label">Corporate Websites</div>
+          <table class="line-table">
+            <tr><th>Type</th><th>Platform</th><th>Price</th><th>Delivery</th><th>Includes</th></tr>
+            <tr><td>Basic Corporate (5 pages)</td><td>WordPress</td><td class="price-cell">₹25,000</td><td>10–14 days</td><td>Theme-based, responsive, contact form, basic SEO</td></tr>
+            <tr><td>Standard Corporate (8–10 pages)</td><td>WordPress</td><td class="price-cell">₹45,000</td><td>15–20 days</td><td>Custom design, blog, animations, SEO-ready</td></tr>
+            <tr><td>Premium Corporate (10–15 pages)</td><td>WordPress / Custom</td><td class="price-cell">₹80,000</td><td>20–30 days</td><td>Full custom design, CMS, performance optimized</td></tr>
+            <tr><td>Wix Corporate</td><td>Wix</td><td class="price-cell">₹20,000</td><td>10–14 days</td><td>Up to 8 pages, branded, responsive</td></tr>
+          </table>
+          <div class="sub-section-label">E-Commerce Websites</div>
+          <table class="line-table">
+            <tr><th>Type</th><th>Platform</th><th>Price</th><th>Delivery</th><th>Includes</th></tr>
+            <tr><td>Starter E-Commerce (up to 50 products)</td><td>Shopify</td><td class="price-cell">₹35,000</td><td>14–20 days</td><td>Theme setup, product upload, payment gateway, shipping</td></tr>
+            <tr><td>Standard E-Commerce (up to 200 products)</td><td>Shopify</td><td class="price-cell">₹60,000</td><td>20–30 days</td><td>Custom theme, discount system, abandoned cart, analytics</td></tr>
+            <tr><td>Premium E-Commerce (unlimited products)</td><td>WooCommerce</td><td class="price-cell">₹85,000</td><td>25–35 days</td><td>Custom design, advanced filters, SEO, speed optimization</td></tr>
+            <tr><td>Enterprise E-Commerce</td><td>Custom (React/Node)</td><td class="price-cell">₹1,50,000+</td><td>45–60 days</td><td>Fully custom, scalable, ERP-ready, admin panel</td></tr>
+            <tr><td>Wix E-Commerce</td><td>Wix</td><td class="price-cell">₹28,000</td><td>10–15 days</td><td>Up to 100 products, Wix Payments, responsive</td></tr>
+          </table>
+          <div class="sub-section-label">Website Add-Ons</div>
+          <table class="line-table">
+            <tr><th>Add-On</th><th>Price</th><th>Notes</th></tr>
+            <tr><td>Extra Page (beyond package)</td><td class="price-cell">₹2,000–₹5,000</td><td>Design complexity dependent</td></tr>
+            <tr><td>Blog Setup + 5 Articles</td><td class="price-cell">₹8,000</td><td>SEO-optimized</td></tr>
+            <tr><td>Multilingual (Hindi + English)</td><td class="price-cell">₹10,000</td><td>WPML / custom setup</td></tr>
+            <tr><td>Speed / Performance Optimization</td><td class="price-cell">₹6,000</td><td>Existing site</td></tr>
+            <tr><td>SSL + Security Hardening</td><td class="price-cell">₹3,000</td><td>One-time</td></tr>
+            <tr><td>Domain + Hosting Setup (1yr)</td><td class="price-cell">₹5,000</td><td>Assistance + configuration (excludes renewal costs)</td></tr>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ════════════════════════════════════════════════════════════
+     DESIGN & UI/UX
+════════════════════════════════════════════════════════════ -->
+<div id="design" class="section">
+  <div class="sec-head">
+    <div class="sec-icon c-pink"><span class="clr-pink">🎨</span></div>
+    <div class="sec-head-text">
+      <h2>Design, UI/UX & Branding</h2>
+      <p>Figma, Adobe XD — full UI/UX design, branding, mobile-responsive design, and style systems.</p>
+    </div>
+  </div>
+  <div class="service-grid">
+    <div class="service-card" id="card-uiux">
+      <div class="service-card-header" onclick="toggleCard('card-uiux')">
+        <div class="service-card-header-left">
+          <div class="svc-icon c-pink"><span class="clr-pink">✏️</span></div>
+          <div>
+            <div class="svc-title">UI/UX Design Services</div>
+            <div class="svc-sub">Figma · Adobe XD · Wireframes · Prototypes · Design Systems</div>
+          </div>
+        </div>
+        <div style="display:flex;align-items:center;gap:16px">
+          <div class="svc-price-range">
+            <div class="price-main">₹1,500 – ₹1,20,000</div>
+            <div class="price-period">project-based</div>
+          </div>
+          <span class="toggle-icon">▼</span>
+        </div>
+      </div>
+      <div class="service-card-body">
+        <div class="service-card-body-inner">
+          <table class="line-table">
+            <tr><th>Service</th><th>Tool</th><th>Price</th><th>Unit</th><th>Notes</th></tr>
+            <tr><td>Wireframe (Lo-Fi)</td><td>Figma / XD</td><td class="price-cell">₹1,500</td><td>per screen</td><td class="note-cell">Grayscale layout only</td></tr>
+            <tr><td>UI Screen Design (Hi-Fi)</td><td>Figma / XD</td><td class="price-cell">₹3,000</td><td>per screen</td><td class="note-cell">Branded, pixel-perfect</td></tr>
+            <tr><td>Website UI Design (up to 5 pages)</td><td>Figma</td><td class="price-cell">₹18,000</td><td>one-time</td><td class="note-cell">Desktop + mobile views</td></tr>
+            <tr><td>Website UI Design (up to 10 pages)</td><td>Figma</td><td class="price-cell">₹32,000</td><td>one-time</td><td class="note-cell">Full design system included</td></tr>
+            <tr><td>Mobile App UI (up to 15 screens)</td><td>Figma</td><td class="price-cell">₹30,000</td><td>one-time</td><td class="note-cell">iOS + Android variants</td></tr>
+            <tr><td>Mobile App UI (15–30 screens)</td><td>Figma</td><td class="price-cell">₹55,000</td><td>one-time</td><td class="note-cell">Full app design</td></tr>
+            <tr><td>Clickable Prototype</td><td>Figma</td><td class="price-cell">₹8,000</td><td>add-on</td><td class="note-cell">On top of design cost</td></tr>
+            <tr><td>Design System / Component Library</td><td>Figma</td><td class="price-cell">₹25,000</td><td>one-time</td><td class="note-cell">Color, type, atoms, molecules</td></tr>
+            <tr><td>UX Audit (existing product)</td><td>—</td><td class="price-cell">₹15,000</td><td>one-time</td><td class="note-cell">Heuristic evaluation + report</td></tr>
+            <tr><td>Mobile Responsive Adaptation</td><td>—</td><td class="price-cell">₹8,000</td><td>per design set</td><td class="note-cell">Adapt desktop design to mobile</td></tr>
+          </table>
+          <div class="sub-section-label">Branding & Identity</div>
+          <table class="line-table">
+            <tr><th>Service</th><th>Price</th><th>Includes</th></tr>
+            <tr><td>Logo Design (3 concepts)</td><td class="price-cell">₹8,000</td><td>3 concepts, 2 revision rounds, all formats</td></tr>
+            <tr><td>Full Brand Identity Kit</td><td class="price-cell">₹25,000</td><td>Logo + colors + typography + card + letterhead + brand guide</td></tr>
+            <tr><td>Social Media Brand Kit</td><td class="price-cell">₹10,000</td><td>Profile pictures, covers, post templates (10)</td></tr>
+            <tr><td>Pitch Deck Design (10–15 slides)</td><td class="price-cell">₹15,000</td><td>Investor-ready design, content structuring guidance</td></tr>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ════════════════════════════════════════════════════════════
+     MOBILE APPS
+════════════════════════════════════════════════════════════ -->
+<div id="app" class="section">
+  <div class="sec-head">
+    <div class="sec-icon c-blue"><span class="clr-blue">📲</span></div>
+    <div class="sec-head-text">
+      <h2>Mobile App Development</h2>
+      <p>Android (Java/Kotlin), iOS (Swift), and Cross-Platform (Flutter / React Native) — from MVP to full-scale production apps.</p>
+    </div>
+  </div>
+  <div class="service-grid">
+    <div class="service-card" id="card-android">
+      <div class="service-card-header" onclick="toggleCard('card-android')">
+        <div class="service-card-header-left">
+          <div class="svc-icon c-green"><span class="clr-green">🤖</span></div>
+          <div>
+            <div class="svc-title">Android Development (Java / Kotlin)</div>
+            <div class="svc-sub">Native Android · Material Design · Play Store deployment</div>
+          </div>
+        </div>
+        <div style="display:flex;align-items:center;gap:16px">
+          <div class="svc-price-range">
+            <div class="price-main">₹80,000 – ₹4,00,000</div>
+            <div class="price-period">project-based</div>
+          </div>
+          <span class="toggle-icon">▼</span>
+        </div>
+      </div>
+      <div class="service-card-body">
+        <div class="service-card-body-inner">
+          <table class="line-table">
+            <tr><th>Tier</th><th>Price</th><th>Timeline</th><th>Includes</th></tr>
+            <tr><td>MVP App (basic features, 5–8 screens)</td><td class="price-cell">₹80,000</td><td>4–6 weeks</td><td>Login, dashboard, 3–4 core features, Play Store submission</td></tr>
+            <tr><td>Standard App (10–20 screens)</td><td class="price-cell">₹1,50,000</td><td>8–12 weeks</td><td>Full feature set, payment integration, push notifications, admin panel</td></tr>
+            <tr><td>Complex App (20+ screens)</td><td class="price-cell">₹2,50,000+</td><td>12–20 weeks</td><td>Multi-role app, real-time features, API integrations, analytics</td></tr>
+            <tr><td>Enterprise App</td><td class="price-cell">₹4,00,000+</td><td>Custom</td><td>Full custom + ERP/CRM integration + dedicated team</td></tr>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <div class="service-card" id="card-ios">
+      <div class="service-card-header" onclick="toggleCard('card-ios')">
+        <div class="service-card-header-left">
+          <div class="svc-icon c-blue"><span class="clr-blue">🍎</span></div>
+          <div>
+            <div class="svc-title">iOS Development (Swift)</div>
+            <div class="svc-sub">Native iOS · SwiftUI / UIKit · App Store deployment</div>
+          </div>
+        </div>
+        <div style="display:flex;align-items:center;gap:16px">
+          <div class="svc-price-range">
+            <div class="price-main">₹1,00,000 – ₹4,50,000</div>
+            <div class="price-period">project-based</div>
+          </div>
+          <span class="toggle-icon">▼</span>
+        </div>
+      </div>
+      <div class="service-card-body">
+        <div class="service-card-body-inner">
+          <table class="line-table">
+            <tr><th>Tier</th><th>Price</th><th>Timeline</th><th>Includes</th></tr>
+            <tr><td>MVP App (5–8 screens)</td><td class="price-cell">₹1,00,000</td><td>5–7 weeks</td><td>Core features, App Store submission, basic UI</td></tr>
+            <tr><td>Standard App (10–20 screens)</td><td class="price-cell">₹1,80,000</td><td>10–14 weeks</td><td>Full features, payment gateway, push notifications</td></tr>
+            <tr><td>Complex App (20+ screens)</td><td class="price-cell">₹3,00,000+</td><td>14–22 weeks</td><td>Real-time, multi-role, advanced integrations</td></tr>
+            <tr><td>Enterprise App</td><td class="price-cell">₹4,50,000+</td><td>Custom</td><td>Custom scope, dedicated team</td></tr>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <div class="service-card" id="card-cross">
+      <div class="service-card-header" onclick="toggleCard('card-cross')">
+        <div class="service-card-header-left">
+          <div class="svc-icon c-cyan"><span class="clr-cyan">🔄</span></div>
+          <div>
+            <div class="svc-title">Cross-Platform Development (Flutter / React Native)</div>
+            <div class="svc-sub">Single codebase · Android + iOS · Cost-effective</div>
+          </div>
+        </div>
+        <div style="display:flex;align-items:center;gap:16px">
+          <div class="svc-price-range">
+            <div class="price-main">₹75,000 – ₹3,00,000</div>
+            <div class="price-period">project-based</div>
+          </div>
+          <span class="toggle-icon">▼</span>
+        </div>
+      </div>
+      <div class="service-card-body">
+        <div class="service-card-body-inner">
+          <table class="line-table">
+            <tr><th>Tier</th><th>Framework</th><th>Price</th><th>Timeline</th><th>Includes</th></tr>
+            <tr><td>MVP (5–8 screens)</td><td>Flutter / RN</td><td class="price-cell">₹75,000</td><td>4–6 weeks</td><td>Android + iOS builds, both store submissions</td></tr>
+            <tr><td>Standard (10–20 screens)</td><td>Flutter / RN</td><td class="price-cell">₹1,40,000</td><td>8–12 weeks</td><td>Full features, API, notifications, admin panel</td></tr>
+            <tr><td>Complex (20+ screens)</td><td>Flutter / RN</td><td class="price-cell">₹2,20,000+</td><td>12–18 weeks</td><td>Advanced features, multi-role, integrations</td></tr>
+            <tr><td>Enterprise</td><td>Flutter / RN</td><td class="price-cell">₹3,00,000+</td><td>Custom</td><td>Full custom scope, dedicated team</td></tr>
+          </table>
+          <div class="notes-banner" style="margin-top:16px">
+            <span class="ni">💡</span>
+            <div><h4>Platform Recommendation</h4>
+              <ul>
+                <li>Flutter: Better performance, great for complex UI/animations, single codebase.</li>
+                <li>React Native: Better for web + app code sharing, large JS team advantage.</li>
+                <li>Native (Android/iOS): Best performance — recommended for gaming, AR/VR, heavy camera usage.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ════════════════════════════════════════════════════════════
+     SOFTWARE & CLOUD
+════════════════════════════════════════════════════════════ -->
+<div id="software" class="section">
+  <div class="sec-head">
+    <div class="sec-icon c-orange"><span class="clr-orange">⚙️</span></div>
+    <div class="sec-head-text">
+      <h2>Software, Cloud & DevOps</h2>
+      <p>Custom software, CRM, ERP, CMS, API development, cloud infrastructure, and ongoing maintenance (AMC).</p>
+    </div>
+  </div>
+  <div class="service-grid">
+
+    <div class="service-card" id="card-customsw">
+      <div class="service-card-header" onclick="toggleCard('card-customsw')">
+        <div class="service-card-header-left">
+          <div class="svc-icon c-orange"><span class="clr-orange">💻</span></div>
+          <div>
+            <div class="svc-title">Custom Software · CRM · ERP</div>
+            <div class="svc-sub">Business automation · Admin panels · Custom SaaS · Enterprise tools</div>
+          </div>
+        </div>
+        <div style="display:flex;align-items:center;gap:16px">
+          <div class="svc-price-range">
+            <div class="price-main">₹1,50,000 – ₹20,00,000</div>
+            <div class="price-period">project-based</div>
+          </div>
+          <span class="toggle-icon">▼</span>
+        </div>
+      </div>
+      <div class="service-card-body">
+        <div class="service-card-body-inner">
+          <table class="line-table">
+            <tr><th>Product Type</th><th>Starting Price</th><th>Timeline</th><th>Notes</th></tr>
+            <tr><td>Custom CRM Software</td><td class="price-cell">₹1,50,000</td><td>6–12 weeks</td><td class="note-cell">Lead management, pipeline, reporting, user roles</td></tr>
+            <tr><td>Basic ERP Software</td><td class="price-cell">₹3,00,000</td><td>12–20 weeks</td><td class="note-cell">Inventory, billing, HR, basic modules</td></tr>
+            <tr><td>Full ERP System</td><td class="price-cell">₹8,00,000+</td><td>20–40 weeks</td><td class="note-cell">Custom modules, integrations, multi-branch</td></tr>
+            <tr><td>Custom SaaS Application</td><td class="price-cell">₹3,00,000+</td><td>12–24 weeks</td><td class="note-cell">Multi-tenant, subscription billing, dashboard</td></tr>
+            <tr><td>Admin Panel / Dashboard</td><td class="price-cell">₹50,000</td><td>3–5 weeks</td><td class="note-cell">For existing app/website, role-based access</td></tr>
+            <tr><td>Business Automation Tool</td><td class="price-cell">₹80,000+</td><td>4–8 weeks</td><td class="note-cell">Workflow automation, integrations, reporting</td></tr>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <div class="service-card" id="card-cms">
+      <div class="service-card-header" onclick="toggleCard('card-cms')">
+        <div class="service-card-header-left">
+          <div class="svc-icon c-blue"><span class="clr-blue">📰</span></div>
+          <div>
+            <div class="svc-title">CMS Development</div>
+            <div class="svc-sub">WordPress · Strapi · Contentful</div>
+          </div>
+        </div>
+        <div style="display:flex;align-items:center;gap:16px">
+          <div class="svc-price-range">
+            <div class="price-main">₹20,000 – ₹1,20,000</div>
+            <div class="price-period">project-based</div>
+          </div>
+          <span class="toggle-icon">▼</span>
+        </div>
+      </div>
+      <div class="service-card-body">
+        <div class="service-card-body-inner">
+          <table class="line-table">
+            <tr><th>Platform</th><th>Price</th><th>Timeline</th><th>Includes</th></tr>
+            <tr><td>WordPress CMS Setup</td><td class="price-cell">₹20,000–₹50,000</td><td>7–14 days</td><td>Theme/custom design, plugins, roles, training</td></tr>
+            <tr><td>Strapi Headless CMS</td><td class="price-cell">₹40,000–₹90,000</td><td>14–21 days</td><td>Content types, API setup, roles, hosting config</td></tr>
+            <tr><td>Contentful Setup + Integration</td><td class="price-cell">₹50,000–₹1,20,000</td><td>14–25 days</td><td>Content models, API, frontend integration, training</td></tr>
+            <tr><td>Custom Headless CMS (built from scratch)</td><td class="price-cell">₹1,50,000+</td><td>25–40 days</td><td>Full custom admin, roles, multi-lang, media management</td></tr>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <div class="service-card" id="card-api">
+      <div class="service-card-header" onclick="toggleCard('card-api')">
+        <div class="service-card-header-left">
+          <div class="svc-icon c-yellow"><span class="clr-yellow">🔌</span></div>
+          <div>
+            <div class="svc-title">API Development & Integration</div>
+            <div class="svc-sub">Payment Gateway · SMS API · Google Maps · Custom REST/GraphQL APIs</div>
+          </div>
+        </div>
+        <div style="display:flex;align-items:center;gap:16px">
+          <div class="svc-price-range">
+            <div class="price-main">₹5,000 – ₹60,000</div>
+            <div class="price-period">per integration</div>
+          </div>
+          <span class="toggle-icon">▼</span>
+        </div>
+      </div>
+      <div class="service-card-body">
+        <div class="service-card-body-inner">
+          <table class="line-table">
+            <tr><th>Integration / API</th><th>Price</th><th>Timeline</th><th>Notes</th></tr>
+            <tr><td>Payment Gateway (Razorpay / PayU / Stripe)</td><td class="price-cell">₹12,000</td><td>2–4 days</td><td class="note-cell">Checkout + webhooks + refund handling</td></tr>
+            <tr><td>SMS API (MSG91 / Twilio)</td><td class="price-cell">₹6,000</td><td>1–2 days</td><td class="note-cell">OTP + transactional + promotional</td></tr>
+            <tr><td>Google Maps Integration</td><td class="price-cell">₹8,000</td><td>2–3 days</td><td class="note-cell">Map embed + store locator + route calc</td></tr>
+            <tr><td>WhatsApp Business API</td><td class="price-cell">₹12,000</td><td>3–5 days</td><td class="note-cell">Template messaging + chatbot setup</td></tr>
+            <tr><td>Social Login (Google / Facebook)</td><td class="price-cell">₹5,000</td><td>1–2 days</td><td class="note-cell">OAuth2 setup</td></tr>
+            <tr><td>Custom REST API (from scratch)</td><td class="price-cell">₹30,000+</td><td>7–14 days</td><td class="note-cell">Documentation + testing + auth</td></tr>
+            <tr><td>GraphQL API Development</td><td class="price-cell">₹40,000+</td><td>10–18 days</td><td class="note-cell">Schema + resolvers + auth + subscriptions</td></tr>
+            <tr><td>Third-Party API Integration (complex)</td><td class="price-cell">₹15,000–₹40,000</td><td>3–10 days</td><td class="note-cell">Salesforce, Zoho, Shopify APIs, etc.</td></tr>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <div class="service-card" id="card-cloud">
+      <div class="service-card-header" onclick="toggleCard('card-cloud')">
+        <div class="service-card-header-left">
+          <div class="svc-icon c-cyan"><span class="clr-cyan">☁️</span></div>
+          <div>
+            <div class="svc-title">Cloud Services & DevOps</div>
+            <div class="svc-sub">AWS · Google Cloud · Azure — Setup, Migration, Management</div>
+          </div>
+        </div>
+        <div style="display:flex;align-items:center;gap:16px">
+          <div class="svc-price-range">
+            <div class="price-main">₹20,000 – ₹60,000</div>
+            <div class="price-period">setup + monthly mgmt</div>
+          </div>
+          <span class="toggle-icon">▼</span>
+        </div>
+      </div>
+      <div class="service-card-body">
+        <div class="service-card-body-inner">
+          <table class="line-table">
+            <tr><th>Service</th><th>Price</th><th>Unit</th><th>Notes</th></tr>
+            <tr><td>Cloud Server Setup (AWS / GCP / Azure)</td><td class="price-cell">₹20,000</td><td>one-time</td><td class="note-cell">EC2/VM setup, security groups, domain config</td></tr>
+            <tr><td>Full Cloud Architecture Design</td><td class="price-cell">₹35,000</td><td>one-time</td><td class="note-cell">Load balancer + auto-scaling + CDN + DB</td></tr>
+            <tr><td>CI/CD Pipeline Setup</td><td class="price-cell">₹25,000</td><td>one-time</td><td class="note-cell">GitHub Actions / Jenkins / CodePipeline</td></tr>
+            <tr><td>Docker + Kubernetes Setup</td><td class="price-cell">₹30,000</td><td>one-time</td><td class="note-cell">Containerization + orchestration</td></tr>
+            <tr><td>Cloud Migration (existing app)</td><td class="price-cell">₹40,000+</td><td>one-time</td><td class="note-cell">Depends on stack size</td></tr>
+            <tr><td>Monthly Cloud Management</td><td class="price-cell">₹15,000–₹40,000</td><td>per month</td><td class="note-cell">Monitoring, scaling, cost optimization, backups</td></tr>
+          </table>
+          <div class="sub-section-label">Maintenance & Support AMC Plans</div>
+          <table class="line-table">
+            <tr><th>AMC Plan</th><th>Price</th><th>Covers</th></tr>
+            <tr><td>Basic AMC</td><td class="price-cell">₹5,000/mo</td><td>Bug fixes, content updates (up to 5 hrs/month), uptime monitoring</td></tr>
+            <tr><td>Standard AMC</td><td class="price-cell">₹10,000/mo</td><td>Above + feature tweaks, plugin updates, security patches (up to 12 hrs)</td></tr>
+            <tr><td>Premium AMC</td><td class="price-cell">₹20,000/mo</td><td>Priority support + new feature dev (up to 25 hrs) + monthly health report</td></tr>
+            <tr><td>Enterprise AMC</td><td class="price-cell">₹35,000+/mo</td><td>Dedicated developer, unlimited tickets, 24×7 critical issue response, SLA</td></tr>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ════════════════════════════════════════════════════════════
+     EMERGING TECH
+════════════════════════════════════════════════════════════ -->
+<div id="emerging" class="section">
+  <div class="sec-head">
+    <div class="sec-icon c-purple"><span class="clr-purple">🚀</span></div>
+    <div class="sec-head-text">
+      <h2>Emerging Technology & QA</h2>
+      <p>AI/ML integration, 3D design, AR/VR development, and professional QA & software testing.</p>
+    </div>
+  </div>
+  <div class="service-grid">
+    <div class="service-card" id="card-ai">
+      <div class="service-card-header" onclick="toggleCard('card-ai')">
+        <div class="service-card-header-left">
+          <div class="svc-icon c-purple"><span class="clr-purple">🤖</span></div>
+          <div>
+            <div class="svc-title">AI / ML Integration</div>
+            <div class="svc-sub">Chatbots · Recommendation Engines · AI Content Tools · OpenAI API</div>
+          </div>
+        </div>
+        <div style="display:flex;align-items:center;gap:16px">
+          <div class="svc-price-range">
+            <div class="price-main">₹40,000 – ₹3,00,000</div>
+            <div class="price-period">project-based</div>
+          </div>
+          <span class="toggle-icon">▼</span>
+        </div>
+      </div>
+      <div class="service-card-body">
+        <div class="service-card-body-inner">
+          <table class="line-table">
+            <tr><th>Service</th><th>Price</th><th>Timeline</th><th>Notes</th></tr>
+            <tr><td>AI Chatbot (OpenAI / Dialogflow)</td><td class="price-cell">₹40,000</td><td>2–4 weeks</td><td class="note-cell">Website integration, FAQ bot, lead capture</td></tr>
+            <tr><td>AI Content Generator Tool</td><td class="price-cell">₹60,000</td><td>4–6 weeks</td><td class="note-cell">Custom GPT-powered tool for your workflow</td></tr>
+            <tr><td>AI Product Recommendation Engine</td><td class="price-cell">₹80,000+</td><td>6–10 weeks</td><td class="note-cell">E-commerce personalization</td></tr>
+            <tr><td>Computer Vision Integration</td><td class="price-cell">₹1,20,000+</td><td>8–14 weeks</td><td class="note-cell">Image recognition, QR scanning, face detection</td></tr>
+            <tr><td>Custom ML Model (training + deploy)</td><td class="price-cell">₹2,00,000+</td><td>Custom</td><td class="note-cell">Depends on data size & complexity</td></tr>
+            <tr><td>AI Workflow Automation</td><td class="price-cell">₹50,000+</td><td>4–8 weeks</td><td class="note-cell">n8n / Make / custom automations</td></tr>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <div class="service-card" id="card-arvr">
+      <div class="service-card-header" onclick="toggleCard('card-arvr')">
+        <div class="service-card-header-left">
+          <div class="svc-icon c-cyan"><span class="clr-cyan">🥽</span></div>
+          <div>
+            <div class="svc-title">3D Design · AR · VR</div>
+            <div class="svc-sub">3D Renders · Product Visualization · AR Filters · VR Experiences</div>
+          </div>
+        </div>
+        <div style="display:flex;align-items:center;gap:16px">
+          <div class="svc-price-range">
+            <div class="price-main">₹15,000 – ₹5,00,000</div>
+            <div class="price-period">project-based</div>
+          </div>
+          <span class="toggle-icon">▼</span>
+        </div>
+      </div>
+      <div class="service-card-body">
+        <div class="service-card-body-inner">
+          <table class="line-table">
+            <tr><th>Service</th><th>Price</th><th>Timeline</th><th>Notes</th></tr>
+            <tr><td>3D Product Rendering (per product)</td><td class="price-cell">₹15,000</td><td>3–5 days</td><td class="note-cell">360° renders, multiple angles, marketing-ready</td></tr>
+            <tr><td>3D Animation (30 sec)</td><td class="price-cell">₹35,000</td><td>2–3 weeks</td><td class="note-cell">Product explainer, architecture walk-through</td></tr>
+            <tr><td>Instagram AR Filter</td><td class="price-cell">₹25,000</td><td>2–3 weeks</td><td class="note-cell">Spark AR development + Meta submission</td></tr>
+            <tr><td>Web AR Experience</td><td class="price-cell">₹60,000+</td><td>4–8 weeks</td><td class="note-cell">Try-before-you-buy, 3D on mobile browser</td></tr>
+            <tr><td>VR Training / Experience Module</td><td class="price-cell">₹2,00,000+</td><td>8–16 weeks</td><td class="note-cell">Unity-based, Oculus / WebXR compatible</td></tr>
+            <tr><td>360° Virtual Tour</td><td class="price-cell">₹40,000</td><td>2–4 weeks</td><td class="note-cell">Real estate, hospitality, retail, education</td></tr>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <div class="service-card" id="card-qa">
+      <div class="service-card-header" onclick="toggleCard('card-qa')">
+        <div class="service-card-header-left">
+          <div class="svc-icon c-orange"><span class="clr-orange">🧪</span></div>
+          <div>
+            <div class="svc-title">QA & Software Testing</div>
+            <div class="svc-sub">Manual · Automated · Performance · Security · Regression</div>
+          </div>
+        </div>
+        <div style="display:flex;align-items:center;gap:16px">
+          <div class="svc-price-range">
+            <div class="price-main">₹12,000 – ₹1,00,000</div>
+            <div class="price-period">project-based</div>
+          </div>
+          <span class="toggle-icon">▼</span>
+        </div>
+      </div>
+      <div class="service-card-body">
+        <div class="service-card-body-inner">
+          <table class="line-table">
+            <tr><th>Testing Type</th><th>Price</th><th>Timeline</th><th>Includes</th></tr>
+            <tr><td>Manual Functional Testing</td><td class="price-cell">₹12,000–₹40,000</td><td>1–2 weeks</td><td>Test cases, bug report, re-testing, sign-off</td></tr>
+            <tr><td>Automated Testing Setup (Selenium)</td><td class="price-cell">₹35,000–₹80,000</td><td>2–4 weeks</td><td>Script writing, CI integration, reporting</td></tr>
+            <tr><td>Mobile App Testing (iOS + Android)</td><td class="price-cell">₹20,000–₹50,000</td><td>1–2 weeks</td><td>Device testing, crash reports, UX testing</td></tr>
+            <tr><td>Performance / Load Testing</td><td class="price-cell">₹18,000–₹45,000</td><td>3–7 days</td><td>JMeter/K6 scripts, bottleneck report</td></tr>
+            <tr><td>API Testing</td><td class="price-cell">₹12,000–₹25,000</td><td>3–5 days</td><td>Postman scripts + contract testing</td></tr>
+            <tr><td>Security Penetration Testing</td><td class="price-cell">₹40,000–₹1,00,000</td><td>1–2 weeks</td><td>OWASP-based, vulnerability report, remediation guide</td></tr>
+            <tr><td>Regression Testing (per release)</td><td class="price-cell">₹8,000–₹20,000</td><td>2–5 days</td><td>Core flow testing before each deployment</td></tr>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ════════════════════════════════════════════════════════════
+     BUNDLES
+════════════════════════════════════════════════════════════ -->
+<div id="bundles" class="section">
+  <div class="sec-head">
+    <div class="sec-icon c-yellow"><span class="clr-yellow">🎁</span></div>
+    <div class="sec-head-text">
+      <h2>Bundle Packages</h2>
+      <p>Save big when you combine services. Designed for every business stage — from local startups to growing enterprises.</p>
+    </div>
+  </div>
+
+  <div class="bundle-grid">
+
+    <!-- DIGITAL STARTER -->
+    <div class="bundle-card">
+      <div class="bundle-badge" style="background:rgba(34,197,94,0.12);color:#22c55e">🌱 STARTER</div>
+      <h3>Digital Starter Pack</h3>
+      <p class="bundle-desc">Perfect for new businesses wanting to establish their online presence and start ranking.</p>
+      <div class="bundle-original">Individually: ₹24,000/mo</div>
+      <div class="bundle-price">
+        <span class="big" style="color:#22c55e">₹16,999</span>
+        <span class="period">/ month</span>
+      </div>
+      <div class="bundle-savings">🎉 Save ₹7,001/month</div>
+      <div class="bundle-includes">
+        <div class="bundle-includes-label">What's included</div>
+        <div class="bundle-item"><span class="dot" style="background:#22c55e"></span><span>On-Page SEO — Starter Plan (₹8,000)</span></div>
+        <div class="bundle-item"><span class="dot" style="background:#22c55e"></span><span>Social Media Management — 1 Platform (₹8,000)</span></div>
+        <div class="bundle-item"><span class="dot" style="background:#22c55e"></span><span>Analytics & Reporting — Basic (₹5,000)</span></div>
+        <div class="bundle-item"><span class="dot" style="background:#22c55e"></span><span>Monthly strategy call (FREE)</span></div>
+      </div>
+      <button class="bundle-cta" onclick="whatsappRedirect('Digital Starter Pack', '₹16,999 / month')">Get Started →</button>
+    </div>
+
+    <!-- GROWTH BUNDLE -->
+    <div class="bundle-card featured">
+      <div class="bundle-badge" style="background:rgba(90,100,255,0.2);color:#7c86ff">🔥 MOST POPULAR</div>
+      <h3>Digital Growth Bundle</h3>
+      <p class="bundle-desc">Best for established SMBs ready to scale organic + paid traffic simultaneously.</p>
+      <div class="bundle-original">Individually: ₹74,000/mo</div>
+      <div class="bundle-price">
+        <span class="big" style="color:var(--accent2)">₹48,999</span>
+        <span class="period">/ month</span>
+      </div>
+      <div class="bundle-savings">🎉 Save ₹25,001/month (34% off)</div>
+      <div class="bundle-includes">
+        <div class="bundle-includes-label">What's included</div>
+        <div class="bundle-item"><span class="dot" style="background:var(--accent)"></span><span>On-Page SEO — Growth (₹16,000)</span></div>
+        <div class="bundle-item"><span class="dot" style="background:var(--accent)"></span><span>Off-Page SEO — Standard (₹20,000)</span></div>
+        <div class="bundle-item"><span class="dot" style="background:var(--accent)"></span><span>SMM — 2 Platforms (₹18,000)</span></div>
+        <div class="bundle-item"><span class="dot" style="background:var(--accent)"></span><span>Google Search Ads Management (₹8,000 min)</span></div>
+        <div class="bundle-item"><span class="dot" style="background:var(--accent)"></span><span>Analytics & Reporting — Advanced (₹12,000)</span></div>
+        <div class="bundle-item"><span class="dot" style="background:var(--accent)"></span><span>Bi-weekly strategy calls (FREE)</span></div>
+      </div>
+      <button class="bundle-cta" onclick="whatsappRedirect('Digital Growth Bundle', '₹48,999 / month')">Get Started →</button>
+    </div>
+
+    <!-- ENTERPRISE DIGITAL -->
+    <div class="bundle-card">
+      <div class="bundle-badge" style="background:rgba(249,115,22,0.12);color:var(--orange)">⚡ ENTERPRISE</div>
+      <h3>Enterprise Digital Suite</h3>
+      <p class="bundle-desc">Full-stack digital marketing for brands ready to dominate their industry online.</p>
+      <div class="bundle-original">Individually: ₹1,65,000/mo</div>
+      <div class="bundle-price">
+        <span class="big" style="color:var(--orange)">₹99,999</span>
+        <span class="period">/ month</span>
+      </div>
+      <div class="bundle-savings">🎉 Save ₹65,001/month (39% off)</div>
+      <div class="bundle-includes">
+        <div class="bundle-includes-label">What's included</div>
+        <div class="bundle-item"><span class="dot" style="background:var(--orange)"></span><span>Full SEO Suite: On-Page + Off-Page + Technical</span></div>
+        <div class="bundle-item"><span class="dot" style="background:var(--orange)"></span><span>SMM — All 5 Platforms</span></div>
+        <div class="bundle-item"><span class="dot" style="background:var(--orange)"></span><span>Google Ads — Search + Display</span></div>
+        <div class="bundle-item"><span class="dot" style="background:var(--orange)"></span><span>Facebook + Instagram Ads</span></div>
+        <div class="bundle-item"><span class="dot" style="background:var(--orange)"></span><span>Email Marketing (Mailchimp)</span></div>
+        <div class="bundle-item"><span class="dot" style="background:var(--orange)"></span><span>ORM — Standard</span></div>
+        <div class="bundle-item"><span class="dot" style="background:var(--orange)"></span><span>Analytics — Enterprise + Dedicated Manager</span></div>
+      </div>
+      <button class="bundle-cta" onclick="whatsappRedirect('Enterprise Digital Suite', '₹99,999 / month')">Get Started →</button>
+    </div>
+
+    <!-- WEB STARTUP -->
+    <div class="bundle-card">
+      <div class="bundle-badge" style="background:rgba(0,229,201,0.1);color:var(--accent2)">🌐 WEB</div>
+      <h3>Startup Web Bundle</h3>
+      <p class="bundle-desc">Launch your business online — complete website + design + foundation SEO.</p>
+      <div class="bundle-original">Individually: ₹65,000</div>
+      <div class="bundle-price">
+        <span class="big" style="color:var(--accent2)">₹44,999</span>
+        <span class="period">one-time</span>
+      </div>
+      <div class="bundle-savings">🎉 Save ₹20,001 (31% off)</div>
+      <div class="bundle-includes">
+        <div class="bundle-includes-label">What's included</div>
+        <div class="bundle-item"><span class="dot" style="background:var(--accent2)"></span><span>Corporate Website — 8 Pages (WordPress)</span></div>
+        <div class="bundle-item"><span class="dot" style="background:var(--accent2)"></span><span>Full UI Design (Figma)</span></div>
+        <div class="bundle-item"><span class="dot" style="background:var(--accent2)"></span><span>Mobile Responsive Design</span></div>
+        <div class="bundle-item"><span class="dot" style="background:var(--accent2)"></span><span>On-Page SEO Setup (10 pages)</span></div>
+        <div class="bundle-item"><span class="dot" style="background:var(--accent2)"></span><span>GA4 + Search Console Setup</span></div>
+        <div class="bundle-item"><span class="dot" style="background:var(--accent2)"></span><span>3 months free basic support</span></div>
+      </div>
+      <button class="bundle-cta" onclick="whatsappRedirect('Startup Web Bundle', '₹44,999 one-time')">Get Started →</button>
+    </div>
+
+    <!-- ECOMMERCE LAUNCH -->
+    <div class="bundle-card featured">
+      <div class="bundle-badge" style="background:rgba(168,85,247,0.15);color:#c084fc">🛍️ E-COMMERCE</div>
+      <h3>E-Commerce Launch Bundle</h3>
+      <p class="bundle-desc">Everything you need to launch and market your online store — from day one.</p>
+      <div class="bundle-original">Individually: ₹1,20,000 setup + ₹40,000/mo</div>
+      <div class="bundle-price">
+        <span class="big" style="color:#c084fc">₹79,999</span>
+        <span class="period">setup</span>
+      </div>
+      <div style="font-size:12px;color:var(--text3);margin-bottom:6px">+ ₹28,999/month marketing</div>
+      <div class="bundle-savings">🎉 Save ₹40,001 on setup + ₹11K/mo ongoing</div>
+      <div class="bundle-includes">
+        <div class="bundle-includes-label">What's included</div>
+        <div class="bundle-item"><span class="dot" style="background:#c084fc"></span><span>Shopify E-Commerce Store (up to 100 products)</span></div>
+        <div class="bundle-item"><span class="dot" style="background:#c084fc"></span><span>UI/UX Design (Figma)</span></div>
+        <div class="bundle-item"><span class="dot" style="background:#c084fc"></span><span>Payment Gateway Integration (Razorpay)</span></div>
+        <div class="bundle-item"><span class="dot" style="background:#c084fc"></span><span>On-Page + Technical SEO</span></div>
+        <div class="bundle-item"><span class="dot" style="background:#c084fc"></span><span>SMM — Instagram + Facebook</span></div>
+        <div class="bundle-item"><span class="dot" style="background:#c084fc"></span><span>Facebook + Instagram Ads Management</span></div>
+        <div class="bundle-item"><span class="dot" style="background:#c084fc"></span><span>Analytics + Monthly Reporting</span></div>
+      </div>
+      <button class="bundle-cta" onclick="whatsappRedirect('E-Commerce Launch Bundle', '₹79,999 setup + ₹28,999 / month')">Get Started →</button>
+    </div>
+
+    <!-- FULL TECH BUNDLE -->
+    <div class="bundle-card">
+      <div class="bundle-badge" style="background:rgba(255,107,107,0.12);color:var(--accent3)">🔧 TECH STACK</div>
+      <h3>Full Tech Build Bundle</h3>
+      <p class="bundle-desc">Complete technology solution — web + mobile app + CMS + SEO + analytics. For serious businesses.</p>
+      <div class="bundle-original">Individually: ₹4,20,000+</div>
+      <div class="bundle-price">
+        <span class="big" style="color:var(--accent3)">₹2,79,999</span>
+        <span class="period">one-time</span>
+      </div>
+      <div class="bundle-savings">🎉 Save ₹1,40,001+ (33% off)</div>
+      <div class="bundle-includes">
+        <div class="bundle-includes-label">What's included</div>
+        <div class="bundle-item"><span class="dot" style="background:var(--accent3)"></span><span>Corporate Website (WordPress Premium)</span></div>
+        <div class="bundle-item"><span class="dot" style="background:var(--accent3)"></span><span>Cross-Platform Mobile App (Flutter MVP)</span></div>
+        <div class="bundle-item"><span class="dot" style="background:var(--accent3)"></span><span>CMS Setup (Strapi / WordPress)</span></div>
+        <div class="bundle-item"><span class="dot" style="background:var(--accent3)"></span><span>Payment + SMS API Integration</span></div>
+        <div class="bundle-item"><span class="dot" style="background:var(--accent3)"></span><span>Full UI/UX Design (Figma)</span></div>
+        <div class="bundle-item"><span class="dot" style="background:var(--accent3)"></span><span>On-Page + Technical SEO</span></div>
+        <div class="bundle-item"><span class="dot" style="background:var(--accent3)"></span><span>Analytics Setup + 3mo AMC</span></div>
+      </div>
+      <button class="bundle-cta" onclick="whatsappRedirect('Full Tech Build Bundle', '₹2,79,999 one-time')">Get Started →</button>
+    </div>
+
+    <!-- LOCAL BUSINESS BUNDLE -->
+    <div class="bundle-card">
+      <div class="bundle-badge" style="background:rgba(34,197,94,0.1);color:var(--green)">🏪 LOCAL BIZ</div>
+      <h3>Local Business Dominance</h3>
+      <p class="bundle-desc">For coaching centers, clinics, retail shops, and local service businesses wanting local leads.</p>
+      <div class="bundle-original">Individually: ₹42,000/mo</div>
+      <div class="bundle-price">
+        <span class="big" style="color:var(--green)">₹26,999</span>
+        <span class="period">/ month</span>
+      </div>
+      <div class="bundle-savings">🎉 Save ₹15,001/month (36% off)</div>
+      <div class="bundle-includes">
+        <div class="bundle-includes-label">What's included</div>
+        <div class="bundle-item"><span class="dot" style="background:var(--green)"></span><span>Local On-Page SEO + GMB Optimization</span></div>
+        <div class="bundle-item"><span class="dot" style="background:var(--green)"></span><span>SMM — Instagram + Facebook (12 posts/mo each)</span></div>
+        <div class="bundle-item"><span class="dot" style="background:var(--green)"></span><span>4 Reels/month</span></div>
+        <div class="bundle-item"><span class="dot" style="background:var(--green)"></span><span>WhatsApp Marketing Campaign (2/month)</span></div>
+        <div class="bundle-item"><span class="dot" style="background:var(--green)"></span><span>Facebook + Instagram Ads Management</span></div>
+        <div class="bundle-item"><span class="dot" style="background:var(--green)"></span><span>ORM — Basic (Google Reviews)</span></div>
+        <div class="bundle-item"><span class="dot" style="background:var(--green)"></span><span>Monthly performance report</span></div>
+      </div>
+      <button class="bundle-cta" onclick="whatsappRedirect('Local Business Dominance', '₹26,999 / month')">Get Started →</button>
+    </div>
+
+    <!-- CUSTOM -->
+    <div class="bundle-card" style="border-style:dashed;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:40px">
+      <div style="font-size:48px;margin-bottom:16px">🤝</div>
+      <h3 style="margin-bottom:8px">Custom Bundle</h3>
+      <p class="bundle-desc" style="margin-bottom:24px">Have specific needs? Mix and match any services. We'll build you a tailored package with maximum value.</p>
+      <div style="font-size:24px;font-weight:800;font-family:'Poppins',sans-serif;color:var(--accent2);margin-bottom:6px">Let's Talk</div>
+      <div style="font-size:12px;color:var(--text3);margin-bottom:20px">Get a custom quote within 24 hours</div>
+      <button class="bundle-cta" style="max-width:200px" onclick="whatsappRedirect('Custom Bundle', 'Custom pricing request')">Request Quote →</button>
+    </div>
+
+  </div>
+
+  <div class="notes-banner" style="margin-top:30px">
+    <span class="ni">📋</span>
+    <div>
+      <h4>Important Pricing Notes — Please Read</h4>
+      <ul>
+        <li>All prices are exclusive of GST (18% applicable on all services).</li>
+        <li>Ad budgets (Google Ads, Meta Ads, etc.) are paid directly by the client to the respective platform — NOT included in our fee.</li>
+        <li>Project prices can vary based on scope, complexity, and number of revisions. Final quote provided after discovery call.</li>
+        <li>Annual contracts receive 12–15% discount. Quarterly contracts receive 7–8% discount.</li>
+        <li>All development projects require 50% advance before work begins; balance on delivery.</li>
+        <li>Monthly marketing retainers are billed at the start of each month with 30-day notice for cancellation.</li>
+        <li>Free 30-minute consultation for all new clients — no obligation.</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+</div><!-- end .content -->
+
+<div class="footer">
+  <strong>Deeplink Creators</strong> — A Mayalok Ventures Company<br>
+  📧 hello@deeplinkcreators.com &nbsp;|&nbsp; 📞 +91 9719364834 &nbsp;|&nbsp; 🌐 deeplinkcreators.com<br><br>
+  <span style="font-size:11px">Pricing valid for 2026. Subject to change with prior notice. GST extra. Custom quotes available for large projects.</span>
+</div>
+
+<script>
+function whatsappRedirect(bundleName, bundlePrice) {
+  const phone = '919719364834';
+  const message = `Hello Deeplink Creators team,\nI want to start with ${bundleName} at ${bundlePrice}.\nPlease share next steps and onboarding details.`;
+  const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+  window.open(url, '_blank');
+}
+
+function showSection(id) {
+  document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+  document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  event.target.classList.add('active');
+  window.scrollTo({ top: document.querySelector('.nav-wrapper').offsetTop, behavior: 'smooth' });
+}
+
+function toggleCard(id) {
+  const card = document.getElementById(id);
+  card.classList.toggle('open');
+}
+</script>
+</body>
+</html>
